@@ -1,4 +1,3 @@
-import bannerImg from "../../assets/images/banner.jpg";
 import Button from "../../components/common/Button";
 import webAboutImg from "../../assets/images/landing page/web-about.jpg";
 import appAboutImg from "../../assets/images/landing page/app-about.png";
@@ -14,7 +13,6 @@ import {
 } from "../../content/constant";
 import ServicesSlider from "../../components/landingpage/ServicesSlider";
 import ClientLogos from "../../components/common/ClientLogos";
-import Spline from "@splinetool/react-spline";
 import { useEffect } from "react";
 import gsap from "gsap";
 import robot from "../../assets/images/ai-robot.png";

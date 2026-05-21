@@ -1,6 +1,5 @@
 import { Link, Navigate, useParams } from "react-router-dom";
 import ContactForm2 from "../../components/common/ContactForm2";
-import { circleImg } from "../../content/constant";
 import DevelopmentProcess from "../../components/common/DevelopmentProcess";
 import OurExpertise from "./components/OurExpertise";
 import SolutionUseCases from "./components/SolutionUseCases";

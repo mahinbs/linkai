@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Divide as Hamburger } from "hamburger-react";
-import { companyDetails, logo } from "../../content/constant";
+import { logo } from "../../content/constant";
 import Drawer from "react-modern-drawer";
 import { Link, useLocation } from "react-router-dom";
 import { IoClose } from "react-icons/io5";
