@@ -81,9 +81,24 @@ const Footer = () => {
               <ImPhone size={20} className="text-primary" />
               <p className="desc">{companyDetails.phone}</p>
             </Link>
+            <Link
+              to={`tel:${companyDetails.phone2}`}
+              className="flex items-center gap-2 hover:text-primary"
+            >
+              <ImPhone size={20} className="text-primary" />
+              <p className="desc">{companyDetails.phone2}</p>
+            </Link>
             <div className="flex gap-2">
               <IoLocation size={23} className="text-primary" />
-              <p className="desc max-w-[16rem]">{companyDetails.location}</p>
+              <div className="space-y-1 flex flex-col gap-1">
+                <p className="desc max-w-[16rem]">{companyDetails.location}</p>
+              </div>
+            </div>
+            <div className="flex gap-2">
+              <IoLocation size={23} className="text-primary" />
+              <div className="space-y-1 flex flex-col gap-1">
+                <p className="desc max-w-[16rem]">{companyDetails.location2}</p>
+              </div>
             </div>
           </div>
         </div>

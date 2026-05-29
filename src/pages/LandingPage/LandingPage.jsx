@@ -16,6 +16,7 @@ import ClientLogos from "../../components/common/ClientLogos";
 import { useEffect } from "react";
 import gsap from "gsap";
 import robot from "../../assets/images/ai-robot.png";
+import HeroBannerVideo from "../../components/common/HeroBannerVideo";
 
 export default function LandingPage({ page }) {
   const isWeb = page === "web";
@@ -42,8 +43,9 @@ export default function LandingPage({ page }) {
     }, []);
   return (
     <>
-      <section className="min-h-screen flex items-center relative">
-        <div className="wrapper flex flex-col-reverse lg:grid grid-cols-[65%_1fr] items-center lg:items-end gap-5">
+      <section className="min-h-screen flex items-center relative overflow-hidden">
+        <HeroBannerVideo />
+        <div className="wrapper relative z-10 flex flex-col-reverse lg:grid grid-cols-[65%_1fr] items-center lg:items-end gap-5">
           <div
             data-aos="fade-right"
             className="space-y-3 relative z-10 py-[6rem]"
@@ -89,7 +91,7 @@ export default function LandingPage({ page }) {
               loading="lazy"
               id="robot"
               src={robot}
-              srcset={`${robot} 300w,
+              srcSet={`${robot} 300w,
              ${robot} 600w,
              ${robot} 1200w`}
               sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"

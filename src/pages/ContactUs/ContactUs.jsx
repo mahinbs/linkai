@@ -217,6 +217,17 @@ const ContactUs = () => {
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-12 h-12 rounded-full flex items-center justify-center bg-white">
+                  <ImPhone size={24} className="text-black" />
+                </div>
+                <Link
+                  to={`tel:${companyDetails.phone2}`}
+                  className="desc hover:text-primary"
+                >
+                  {companyDetails.phone2}
+                </Link>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-12 h-12 rounded-full flex items-center justify-center bg-white">
                   <IoMail size={24} className="text-black" />
                 </div>
                 <Link
@@ -231,7 +242,13 @@ const ContactUs = () => {
                 <div className="w-12 h-12 rounded-full flex items-center justify-center bg-white">
                   <IoLocation size={28} className="text-black" />
                 </div>
-                <p className="desc max-w-[16rem]">{companyDetails.location}</p>
+                <p className="desc max-w-[35rem]">{companyDetails.location}</p>
+              </div>
+              <div className="flex gap-2">
+                <div className="w-12 h-12 rounded-full flex items-center justify-center bg-white">
+                  <IoLocation size={28} className="text-black" />
+                </div>
+                <p className="desc max-w-[35rem]">{companyDetails.location2}</p>
               </div>
             </div>
           </div>

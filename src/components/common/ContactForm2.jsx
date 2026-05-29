@@ -52,7 +52,7 @@ const ContactForm2 = ({ isDark }) => {
 
       const res = await axios.post(
         "https://send-mail-redirect-boostmysites.vercel.app/send-email",
-        data
+        data,
       );
 
       if (res.data.success) {
@@ -222,6 +222,12 @@ const ContactForm2 = ({ isDark }) => {
               >
                 {companyDetails.phone}
               </Link>
+              <Link
+                to={`tel:${companyDetails.phone2}`}
+                className="desc hover:text-primary1"
+              >
+                {companyDetails.phone2}
+              </Link>
             </div>
             <div className="flex items-center gap-2">
               <div
@@ -247,7 +253,21 @@ const ContactForm2 = ({ isDark }) => {
               >
                 <IoLocation size={28} />
               </div>
-              <p className="desc max-w-[16rem]">{companyDetails.location}</p>
+              <div className="space-y-1 flex flex-col gap-1">
+                <p className="desc max-w-[16rem]">{companyDetails.location}</p>
+              </div>
+            </div>
+            <div className="flex gap-2">
+              <div
+                className={`${
+                  isDark ? "bg-white text-black" : "bg-black text-white"
+                } w-12 h-12 rounded-full flex items-center justify-center`}
+              >
+                <IoLocation size={28} />
+              </div>
+              <div className="space-y-1 flex flex-col gap-1">
+                <p className="desc max-w-[16rem]">{companyDetails.location2}</p>
+              </div>
             </div>
           </div>
         </div>

@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import gsap from "gsap";
 import robot from "../../assets/images/ai-robot.png";
 import ContactForm2 from "../../components/common/ContactForm2";
+import HeroBannerVideo from "../../components/common/HeroBannerVideo";
 
 export default function Home() {
   useEffect(() => {
@@ -27,8 +28,9 @@ export default function Home() {
 
   return (
     <>
-      <section className="min-h-screen flex flex-col justify-center relative">
-        <div className="wrapper flex flex-col-reverse lg:grid grid-cols-[65%_1fr] items-center lg:items-end gap-5">
+      <section className="min-h-screen flex flex-col justify-center relative overflow-hidden">
+        <HeroBannerVideo />
+        <div className="wrapper relative z-10 flex flex-col-reverse lg:grid grid-cols-[65%_1fr] items-center lg:items-end gap-5">
           <div
             data-aos="fade-right"
             className="space-y-3 relative z-10 py-[6rem]"

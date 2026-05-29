@@ -11,9 +11,11 @@ export { logo, circleImg, moonShapeImg };
 export const companyDetails = {
   email: "support@linkai.in",
   location: "A52, RPR Complex, 5th floor, 1st Main Rd, Kamadhenu Nagar, B Narayanapura, Mahadevapura, Bangalore 560016, Bengaluru, Karnataka 560016, India",
+  location2: "WeWork, Salarpuria Symbiosis, Arekere Village, Bannerghatta Rd, Begur Hobli, Bengaluru, Karnataka 560076, India",
   mapCenter: [12.998056, 77.684862],
   mapZoom: 15,
-  phone: "917795122162",
+  phone: "+917795122162",
+  phone2: "1800 123 999 000",
   whatsapp: "https://wa.me/917795122162",
   instagram: "https://www.instagram.com/linkai_technologies?igsh=azk5bXd4bHdrajZz",
   linkedin: "https://www.linkedin.com/company/linkai-technologies/",

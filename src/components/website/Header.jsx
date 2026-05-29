@@ -22,7 +22,7 @@ const Header = () => {
 
   return (
     <>
-      <div className="bg-[#1D1D1D] fixed top-0 flex items-center py-2 left-0 w-full z-[100]">
+      <div className="bg-black/60 backdrop-blur-sm fixed top-0 flex items-center py-2 left-0 w-full z-[100]">
         <div className="wrapper w-full h-fit flex items-center justify-between gap-10">
           <a data-aos="fade-down" href="/" className="flex items-center gap-2">
             <img
@@ -51,17 +51,6 @@ const Header = () => {
               </Link>
             ))}
           </div>
-          {/* <div data-aos="fade-down" className="hidden lg:flex">
-            <Link
-              to={`tel:${companyDetails.phone}`}
-              className="group relative w-[70px] h-[70px]"
-            >
-              <div className="group-hover:bg-[#b81e23] z-[1] flex items-center justify-center absolute top-1/2 left-0 -translate-y-1/2 h-[31px] w-full bg-[#E41B23] rounded-[6px] text-sm transition duration-300">
-                Call Us
-              </div>
-              <div className="group-hover:bg-[#b81e23] absolute left-1/2 top-0 -translate-x-1/2 w-[31px] h-full bg-[#E41B23] rounded-[6px] transition duration-300"></div>
-            </Link>
-          </div> */}
 
           {/* Mobile Hamburger Button */}
           <button data-aos="fade-down" className="lg:hidden">
