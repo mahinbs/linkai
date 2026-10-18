@@ -1,7 +1,8 @@
 import Button from "../../components/common/Button";
 import aboutImg from "../../assets/images/faq.jpeg";
 import { Link } from "react-router-dom";
-import IndustriesSection from "../../components/common/IndustriesSection";
+import PainPoints from "../../components/common/PainPoints";
+import ProjectJourney from "../../components/common/ProjectJourney";
 import ServicesSection from "./components/ServicesSection";
 import WorkProcess from "../../components/common/WorkProcess";
 import { useEffect } from "react";
@@ -35,19 +36,28 @@ export default function Home() {
             data-aos="fade-right"
             className="space-y-3 relative z-10 py-[6rem]"
           >
+            <p className="uppercase tracking-widest text-sm text-primary font-semibold">
+              LinkAI Technologies · Real Estate Technology
+            </p>
             <h1 className="text1 font-montserrat max-w-[60rem]">
-              Build Websites, Apps, and AI <br />
+              Technology That Helps Real Estate Developers{" "}
               <span className="text-primary font-montserrat">
-                That Grow Your Business
+                Sell Faster and Build Smoother
               </span>
             </h1>
             <p className="desc max-w-2xl pb-3">
-              <span className="font-bold">LinkAI</span> designs and ships
-              website development, mobile applications, custom AI software, and
-              intelligent chatbots—for real estate, education, e-commerce, and
-              healthcare teams that need results, not jargon.
+              <span className="font-bold">LinkAI Technologies</span> builds
+              websites, apps, AI and automation for the real estate industry.
+              We fix what slows developers and builders down: leads that go
+              cold, site visits that do not happen, buyers who keep calling for
+              updates, and payments that arrive late.
             </p>
-            <Button to="/contact-us">Get Started</Button>
+            <div className="flex flex-wrap gap-4">
+              <Button to="/contact-us">Talk to Our Team</Button>
+              <Button scrollTo="challenges" offset={80}>
+                See the Problems We Solve
+              </Button>
+            </div>
           </div>
 
           <div className="h-[38vh] lg:h-[50vh] flex justify-start translate-y-2/3 lg:translate-y-0">
@@ -71,18 +81,18 @@ export default function Home() {
         <div className="wrapper flex flex-col-reverse md:grid grid-cols-[60%_1fr] gap-7">
           <div data-aos="fade-right" className="space-y-5 py-4">
             <h3 className="text2">
-              <span className="text-primary1">LinkAI:</span> Technology
-              Partners for Ambitious Teams
+              <span className="text-primary1">LinkAI:</span> The Technology
+              Partner for Real Estate
             </h3>
             <p className="desc hyphens-auto">
-              We help companies launch and scale digital products with a focused
-              stack of services: high-performance websites, native and
-              cross-platform apps, production-ready AI software, and chatbots
-              that automate support and sales. <br />
-              Whether you are modernizing a property portal, launching an
-              e-learning platform, growing an online store, or streamlining
-              patient workflows, we combine clear communication, solid
-              engineering, and practical AI to deliver on time and on target.
+              Real estate is one industry with one set of problems: getting
+              enquiries answered, turning them into site visits and bookings,
+              keeping buyers informed through construction, collecting on time
+              and handing over without complaints. We build technology for
+              exactly that, so you do not have to explain your business to a
+              general software vendor. <br />
+              We start with developers and builders, and we also serve the
+              channel partners and sales teams who work with them.
             </p>
             <div className="flex gap-10 pt-4">
               <Link
@@ -113,7 +123,8 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <IndustriesSection />
+      <PainPoints />
+      <ProjectJourney />
       <ServicesSection />
       <WorkProcess />
       <ContactForm2 />

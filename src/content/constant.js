@@ -23,31 +23,13 @@ export const companyDetails = {
   x: "",
   facebook: "https://www.facebook.com/share/1CtxAg6Q9b/",
 };
-// industries
+// industries (kept for compatibility: the site now serves real estate)
 export const industries = [
   {
     id: 1,
     title: "Real-estate",
     image: "/assets/images/icons/Real-estate.png",
-    desc: "Listing portals, virtual tours, CRM integrations, and AI assistants that qualify leads and book viewings faster.",
-  },
-  {
-    id: 2,
-    title: "Education",
-    image: "/assets/images/icons/Education and E-Learning.png",
-    desc: "Learning platforms, student dashboards, and chatbots that answer questions and guide learners 24/7.",
-  },
-  {
-    id: 3,
-    title: "E-commerce",
-    image: "/assets/images/icons/E-commerce and Retail.png",
-    desc: "High-converting storefronts, inventory sync, and smart bots for product discovery, orders, and support.",
-  },
-  {
-    id: 4,
-    title: "Healthcare",
-    image: "/assets/images/icons/Healthcare and Biotech.png",
-    desc: "Patient portals, appointment systems, and secure AI tools that streamline care and reduce admin burden.",
+    desc: "Technology for developers, builders, channel partners and sales teams.",
   },
 ];
 
@@ -101,7 +83,7 @@ export const futureGoals = [
     icon: <IoMdGlobe size={30} />,
     title: "Scale with Confidence",
     description:
-      "Help more businesses launch reliable digital products across India and international markets.",
+      "Help more real estate teams run projects on reliable technology across India and international markets.",
   },
   {
     icon: <IoMdCheckmarkCircleOutline size={30} />,
@@ -121,39 +103,45 @@ export const futureGoals = [
 export const faqs = [
   {
     id: 1,
-    question: "What services does LinkAI offer?",
+    question: "Who is LinkAI Technologies for?",
     answer:
-      "We specialize in four core areas: Website development, Application development (iOS, Android, and cross-platform), AI software development, and Chatbots. Every project is scoped to your goals, timeline, and budget.",
+      "We build technology for the real estate industry, starting with developers and builders of residential, commercial and plotted projects. We also serve the channel partners, brokerages and sales teams who work with them.",
   },
   {
     id: 2,
-    question: "How long does a typical project take?",
+    question: "What problems do you solve?",
     answer:
-      "Timelines depend on scope. A marketing website may take 4–8 weeks; a full mobile app or custom AI product often runs 3–6 months. We share a detailed plan with milestones before development starts.",
+      "Leads that go cold because replies are slow, site visits that are missed, unclear lead ownership between channel partners, outdated prices and availability, buyers calling for construction updates, late milestone payments, and after sales requests that get lost. Each has a solution on our services page.",
   },
   {
     id: 3,
-    question: "Can you integrate with our existing tools?",
+    question: "Do we have to replace our CRM?",
     answer:
-      "Yes. We regularly connect websites and apps to CRMs, payment gateways, ERPs, helpdesks, and internal APIs. Chatbots can pull answers from your docs, databases, or third-party systems.",
+      "No. We connect to the CRM, accounts and inventory sheets you already use. If you do not have a working CRM, we can set one up for your sales team.",
   },
   {
     id: 4,
-    question: "How do you approach AI and chatbot projects?",
+    question: "How do we start, and how long does it take?",
     answer:
-      "We start with the business problem—not the buzzwords. That means defining use cases, data sources, guardrails, and success metrics, then building models or bots you can monitor, improve, and trust in production.",
+      "We start with the one problem that costs you most, for example slow lead follow up on one project. A first version is usually live in weeks, not months. We share a plan with milestones before building anything.",
   },
   {
     id: 5,
-    question: "Do you provide support after launch?",
+    question: "Will AI talk to our buyers without us knowing?",
     answer:
-      "Absolutely. We offer maintenance, performance monitoring, security updates, and feature enhancements so your product stays reliable as your business and technology landscape change.",
+      "You decide what it can say and when a person takes over. It only uses the facts you approve, it never promises prices or dates you have not given it, and every conversation is visible to your team.",
   },
   {
     id: 6,
-    question: "Which industries do you work with?",
+    question: "What does it cost?",
     answer:
-      "We focus on Real-estate, Education, E-commerce, and Healthcare—though our team has delivered successful projects in other sectors as well. Tell us about your domain and we will tailor the solution accordingly.",
+      "It depends on the project and what we connect. Tell us what you want to fix and we will come back with a clear plan and price. There are no surprises after you agree.",
+  },
+  {
+    id: 7,
+    question: "Do you support us after launch?",
+    answer:
+      "Yes. We provide maintenance, monitoring, updates and improvements, and we review results with your team so the technology keeps earning its place.",
   },
 ];
 

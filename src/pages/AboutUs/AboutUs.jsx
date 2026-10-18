@@ -4,7 +4,6 @@ import img2 from "../../assets/images/client-engagement-and-support.png";
 import img3 from "../../assets/images/ongoing-support.png";
 import img4 from "../../assets/images/Partnership Beyond Projects.png";
 import { circleImg, futureGoals } from "../../content/constant";
-import Testimonials from "../../components/common/Testimonials";
 import ContactForm2 from "../../components/common/ContactForm2";
 
 const AboutUs = () => {
@@ -44,11 +43,14 @@ const AboutUs = () => {
             </div>
             <div data-aos="fade-up">
               <p className="desc">
-                LinkAI was founded on a simple idea: technology should solve
-                real problems, not add complexity. Today we partner with
-                businesses in real estate, education, e-commerce, and healthcare
-                to deliver websites, mobile apps, AI software, and chatbots that
-                are reliable, measurable, and built to last.
+                LinkAI Technologies was founded on a simple idea: technology
+                should solve real problems, not add complexity. We chose real
+                estate because its problems are clear and costly: leads that go
+                cold, site visits that are missed, buyers who cannot get
+                updates, and payments and complaints that slip through the
+                cracks. Today we build websites, apps, AI and automation for
+                real estate developers and builders, and for the channel
+                partners and sales teams who work with them.
               </p>
             </div>
           </div>
@@ -221,7 +223,6 @@ const AboutUs = () => {
         </div>
       </section>
 
-      <Testimonials />
       <section className="py-14 bg-white text-black relative overflow-hidden z-0">
         <div
           data-aos="fade-down"
@@ -236,10 +237,11 @@ const AboutUs = () => {
             Vision
           </h2>
           <p data-aos="fade-up" className="desc max-w-4xl mx-auto">
-            To make advanced technology approachable for every ambitious
-            business—websites that perform, apps people rely on, AI that saves
-            time, and chatbots that strengthen customer relationships. We build
-            with clarity, ship with discipline, and stand behind what we deliver.
+            To make advanced technology approachable for every real estate
+            team: project websites that bring in visits, apps that keep buyers
+            and partners informed, AI that saves hours of follow up, and
+            assistants that answer every enquiry. We build with clarity, ship
+            with discipline, and stand behind what we deliver.
           </p>
         </div>
         <div className="wrapper py-16 text-center">

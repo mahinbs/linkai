@@ -15,13 +15,13 @@ const CTA = () => {
             />
           </div>
           <div data-aos="fade-up" className="wrapper space-y-7 text-black px-[3rem] sm:px-[5rem] py-[3rem]">
-            <h2 className="text1">Ready to start your Website at LinkAI?</h2>
+            <h2 className="text1">Ready to stop losing buyers to slow follow up?</h2>
             <div>
               <Link
                 to="/contact-us"
                 className="p-3 btn !rounded bg-black text-white hover:bg-black/80"
               >
-                Know More
+                Talk to Us
               </Link>
             </div>
           </div>

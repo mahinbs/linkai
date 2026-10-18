@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import banner from "../../assets/images/banners/services.jpg";
-import Testimonials from "../../components/common/Testimonials";
 import Faqs from "../../components/common/Faqs";
 import CTA from "../../components/common/CTA";
 import { ourServices } from "../../content/ourServices";
@@ -18,11 +17,12 @@ const Services = () => {
         />
         <div className="wrapper flex h-full py-[6rem] md:pt-[8rem] pb-16 items-center justify-start">
           <h1 data-aos="fade-right" className="text_xl">
-            Our Services
+            Solutions for Real Estate
           </h1>
           <p data-aos="fade-up" className="desc max-w-2xl mt-4 text-white/90">
-            Website development, application development, AI software, and
-            chatbots—end to end, from strategy to launch.
+            Project websites, buyer and partner apps, AI for sales and
+            operations, and assistants that answer every enquiry. Built for
+            developers and builders.
           </p>
         </div>
       </section>
@@ -53,7 +53,6 @@ const Services = () => {
       </section>
       <Faqs />
       <CTA />
-      <Testimonials />
     </>
   );
 };

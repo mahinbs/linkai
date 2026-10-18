@@ -5,27 +5,27 @@ const workProcess = [
   {
     id: 1,
     title: "Discover",
-    desc: "We learn your goals, users, and constraints—then define scope, success metrics, and the right technical approach.",
+    desc: "We learn your projects, your sales process and where leads and time are lost, then agree what success looks like in your numbers.",
   },
   {
     id: 2,
     title: "Plan",
-    desc: "You get a clear roadmap: milestones, timelines, responsibilities, and what each release will deliver.",
+    desc: "You get a clear roadmap: what we build first, timelines, who does what, and what each release changes for your team.",
   },
   {
     id: 3,
     title: "Design",
-    desc: "Wireframes and prototypes bring the experience to life early, so we refine flows before writing production code.",
+    desc: "Screens and flows for your sales team, buyers and partners are shown early, so we refine them before building.",
   },
   {
     id: 4,
     title: "Build & Test",
-    desc: "We develop with modern stacks, integrate APIs and AI where needed, and test for performance, security, and reliability.",
+    desc: "We build, connect your CRM, inventory and payment records, and test with your own team on real project data.",
   },
   {
     id: 5,
     title: "Launch & Grow",
-    desc: "Smooth deployment, handover documentation, and ongoing support so your product keeps improving after go-live.",
+    desc: "Launch with one project first, learn from real use, then extend to every project with support along the way.",
   },
 ];
 
@@ -48,17 +48,17 @@ const WorkProcess = () => {
       />
       <div className="wrapper space-y-3">
         <h3 className="text1 text-center">
-          How We Bring Your
+          How We Work With
           <br />
-          <span className="text-primary">Idea to Reality</span>
+          <span className="text-primary">Real Estate Teams</span>
         </h3>
         <p
          
           className="desc text-center max-w-4xl mx-auto text-[#FEFEFE]"
         >
-          From first workshop to production launch, we keep you in the loop at
-          every step—so there are no surprises, only steady progress toward a
-          product you can rely on.
+          From first workshop to launch, we keep you in the loop at every
+          step. Start with the problem that costs you most, see it fixed, then
+          add the next.
         </p>
         <div className="pt-5 flex flex-wrap justify-center gap-5 sm:gap-7 max-w-5xl mx-auto">
           {workProcess.map((item) => (

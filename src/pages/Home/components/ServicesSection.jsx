@@ -94,14 +94,14 @@ const ServicesSection = () => {
             <p className="font-semibold uppercase">Our Services</p>
           </div>
           <h2 data-aos="fade-right" className="text1 z-[2] relative">
-            Four Ways We Help <br />{" "}
-            <span className="text-primary1">You Win Online</span>
+            Four Solutions <br />{" "}
+            <span className="text-primary1">Built for Real Estate</span>
             <br />
           </h2>
           <p>
-            Websites that convert, apps people keep using, AI that automates
-            real work, and chatbots that never miss a lead—each tailored to your
-            industry and built to scale.
+            Project websites that convert, apps for buyers and partners, AI for
+            sales and operations, and assistants that answer every enquiry.
+            Each one answers a problem on the list above.
           </p>
           <div data-aos="fade-right" className="flex gap-5 z-[2] relative">
             <button

@@ -7,13 +7,13 @@ export const blogs = [
   },
   {
     id: 2,
-    title: "5 Ways AI Chatbots Improve E-Commerce Conversion and Support",
+    title: "5 Ways WhatsApp AI Helps Developers Book More Site Visits",
     image: require("../assets/images/blogs/other/2.jpg"),
     link: "",
   },
   {
     id: 3,
-    title: "Building HIPAA-Aware Healthcare Apps: What Teams Should Plan Early",
+    title: "What Buyers Expect From a Real Estate App After They Book",
     image: require("../assets/images/blogs/other/3.jpg"),
     link: "",
   },

@@ -197,11 +197,11 @@ const ContactUs = () => {
             <h2 className="text1 text-primary">Get It Touch</h2>
             <div className="h-2 w-[18rem] bg-white"></div>
             <h5 className="text2">
-              Let’s Build Something Extraordinary Together!
+              Tell Us What Is Slowing Your Projects Down
             </h5>
             <p className="desc">
-              Your website is more than an online presence—it’s a gateway to
-              success.
+              Share your project, your sales process and the problem that costs you
+              most. We will come back with a clear plan.
             </p>
             <div className="space-y-4">
               <div className="flex items-center gap-2">

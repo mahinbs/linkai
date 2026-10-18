@@ -20,7 +20,7 @@ export default function Testimonials() {
       <div data-aos="fade-up" className="wrapper text-center space-y-3 mb-8">
         <h2 className="text1 text-primary2">What Our Clients Say</h2>
         <p className="desc max-w-4xl mx-auto">
-          Teams across real estate, education, e-commerce, and healthcare trust
+          Real estate teams trust
           LinkAI to ship websites, apps, AI software, and chatbots that deliver
           real business outcomes—not just polished demos.
         </p>
