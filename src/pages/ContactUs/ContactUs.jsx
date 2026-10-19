@@ -194,7 +194,7 @@ const ContactUs = () => {
             </button>
           </form>
           <div data-aos="fade-up" className="space-y-4">
-            <h2 className="text1 text-primary">Get It Touch</h2>
+            <h2 className="text1 text-primary">Let's talk</h2>
             <div className="h-2 w-[18rem] bg-white"></div>
             <h5 className="text2">
               Tell Us What Is Slowing Your Projects Down
@@ -213,17 +213,6 @@ const ContactUs = () => {
                   className="desc hover:text-primary"
                 >
                   {companyDetails.phone}
-                </Link>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-12 h-12 rounded-full flex items-center justify-center bg-white">
-                  <ImPhone size={24} className="text-black" />
-                </div>
-                <Link
-                  to={`tel:${companyDetails.phone2}`}
-                  className="desc hover:text-primary"
-                >
-                  {companyDetails.phone2}
                 </Link>
               </div>
               <div className="flex items-center gap-2">

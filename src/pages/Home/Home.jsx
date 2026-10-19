@@ -46,11 +46,8 @@ export default function Home() {
               </span>
             </h1>
             <p className="desc max-w-2xl pb-3">
-              <span className="font-bold">LinkAI Technologies</span> builds
-              websites, apps, AI and automation for the real estate industry.
-              We fix what slows developers and builders down: leads that go
-              cold, site visits that do not happen, buyers who keep calling for
-              updates, and payments that arrive late.
+              Websites, apps and AI for developers and builders. We fix what
+              slows you down: cold leads, missed site visits and late payments.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button to="/contact-us">Talk to Our Team</Button>
@@ -84,16 +81,25 @@ export default function Home() {
               <span className="text-primary1">LinkAI:</span> The Technology
               Partner for Real Estate
             </h3>
-            <p className="desc hyphens-auto">
-              Real estate is one industry with one set of problems: getting
-              enquiries answered, turning them into site visits and bookings,
-              keeping buyers informed through construction, collecting on time
-              and handing over without complaints. We build technology for
-              exactly that, so you do not have to explain your business to a
-              general software vendor. <br />
-              We start with developers and builders, and we also serve the
-              channel partners and sales teams who work with them.
+            <p className="desc">
+              We build technology for one industry, so you never have to explain
+              your business to a general software vendor.
             </p>
+            <ul className="grid gap-3 sm:grid-cols-3 pt-2">
+              {[
+                ["Enquiries", "answered in seconds"],
+                ["Site visits", "booked and followed up"],
+                ["Buyers", "kept informed to handover"],
+              ].map(([title, text]) => (
+                <li
+                  key={title}
+                  className="border border-black/20 rounded-xl p-4"
+                >
+                  <p className="font-semibold text-lg">{title}</p>
+                  <p className="text-sm text-black/70">{text}</p>
+                </li>
+              ))}
+            </ul>
             <div className="flex gap-10 pt-4">
               <Link
                 to="/about-us"

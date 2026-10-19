@@ -198,14 +198,12 @@ const ContactForm2 = ({ isDark }) => {
           </button>
         </form>
         <div className="space-y-4">
-          <h2 className="text1">Get It Touch</h2>
+          <h2 className="text1">Let's talk</h2>
           <div className="h-2 w-[18rem] bg-black"></div>
-          <h5 className="text2">
-            Let’s Build Something Extraordinary Together!
-          </h5>
+          <h5 className="text2">Have a process worth improving?</h5>
           <p className="desc">
-            Your website is more than an online presence—it’s a gateway to
-            success.
+            Tell us what is slowing your team down. We will bring the right
+            questions and a clear next step.
           </p>
           <div className="space-y-4">
             <div className="flex items-center gap-2">
@@ -221,12 +219,6 @@ const ContactForm2 = ({ isDark }) => {
                 className="desc hover:text-primary1"
               >
                 {companyDetails.phone}
-              </Link>
-              <Link
-                to={`tel:${companyDetails.phone2}`}
-                className="desc hover:text-primary1"
-              >
-                {companyDetails.phone2}
               </Link>
             </div>
             <div className="flex items-center gap-2">

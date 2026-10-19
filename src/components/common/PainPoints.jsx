@@ -50,9 +50,7 @@ const PainPoints = ({ id = "challenges" }) => {
           data-aos="fade-up"
           className="desc text-center max-w-3xl mx-auto pt-4 text-[#A4B4C3] relative z-10"
         >
-          From the first enquiry to the last snag, the same gaps cost developers
-          sales, time and goodwill. Here is where it goes wrong, and how our
-          technology fixes it.
+          Where it goes wrong, and how our technology fixes it.
         </p>
       </div>
       <div className="relative h-full pb-10 xl:pb-16">

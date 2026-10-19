@@ -15,7 +15,6 @@ export const companyDetails = {
   mapCenter: [12.998056, 77.684862],
   mapZoom: 15,
   phone: "+917795122162",
-  phone2: "1800 123 999 000",
   whatsapp: "https://wa.me/917795122162",
   instagram: "https://www.instagram.com/linkai_technologies?igsh=azk5bXd4bHdrajZz",
   linkedin: "https://www.linkedin.com/company/linkai-technologies/",
