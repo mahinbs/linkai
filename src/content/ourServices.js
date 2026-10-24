@@ -1,41 +1,32 @@
 // LinkAI Technologies: technology for real estate, starting with developers and builders (revamp, 18 Oct 2026).
-// Four solution areas, each a page at /services/<title>. The shapes (and the images) are the same as before:
+// Four solution areas, each a page at /services/<title>. Pictures, headings and CTAs from Dilli's 24 Oct 2026 review:
+// each section names the buyer or team problem first, then the benefit. The shapes are the same as before:
 // ServiceDetails, OurExpertise, DevelopmentProcess and SolutionUseCases read them.
 export const ourServices = [
   {
     id: 1,
     title: "Project websites and virtual tours",
     subHeading: "A launch page that turns property seekers into site visits.",
-    image: require("../assets/images/services/web-dev1.jpeg"),
+    image: require("../assets/images/re/web-card.jpg"),
+    cta: "Discuss Your Website Project",
     desc: "Project microsites, 360 degree tours, live unit availability and enquiry forms that drop straight into your sales CRM, so every campaign has a page built to convert.",
     serviceDetails: {
-      banner: require("../assets/images/services/web-dev/banner.jpeg"),
+      banner: require("../assets/images/re/web-banner.jpg"),
       img1: require("../assets/images/services/web-dev/1.jpeg"),
       img2: require("../assets/images/services/web-dev/2.jpeg"),
       whyChooseContent: {
-        heading: "Why LinkAI for Real Estate Websites?",
+        heading: "Websites Built to Drive Real Estate Enquiries",
+        intro: "Designed around property buyers, connected to your sales process, and ready to support your marketing campaigns.",
         list: [
-          {
-            title: "Built Around the Site Visit",
-            desc: "Every page leads to one action: book a visit, call, or WhatsApp the sales team, with the answer to the first questions buyers ask already on the page.",
-          },
-          {
-            title: "Lead Capture That Reaches Sales",
-            desc: "Enquiries from your site, ads and landing pages go into one place with the source attached, so no lead sits in an inbox and you know which campaign sent it.",
-          },
-          {
-            title: "Fast on a Phone",
-            desc: "Most buyers first see your project on a mobile screen. Pages are light, quick and easy to use on any phone.",
-          },
-          {
-            title: "Ready for Your Ads",
-            desc: "Dedicated landing pages for Meta and search campaigns, with tracking set up so you can see which ad led to which enquiry.",
-          },
+          { title: "Built Around the Site Visit", desc: "Guide buyers toward booking a visit, calling, or contacting your sales team, with answers to their first questions already on the page." },
+          { title: "Lead Capture That Reaches Sales", desc: "Bring enquiries from your website and campaigns into one organised process, with the source of each one attached." },
+          { title: "Fast on a Phone", desc: "Give property buyers a smooth experience on the mobile screens where most of them first see your project." },
+          { title: "Ready for Your Ads", desc: "Support campaigns with dedicated landing pages and enquiry tracking, so you can see which campaign brings visits." },
         ],
       },
       ourExpertiseContent: [
         {
-          img: require("../assets/images/services/web-dev/expertise1.png"),
+          img: require("../assets/images/re/d-microsites.jpg"),
           title: "Project Microsites",
           list: [
             "One page per project: configurations, amenities, location advantages, floor plans and a clear enquiry form.",
@@ -43,7 +34,7 @@ export const ourServices = [
           ],
         },
         {
-          img: require("../assets/images/services/web-dev/expertise2.jpeg"),
+          img: require("../assets/images/re/d-tours.jpg"),
           title: "Virtual Tours and 3D Walkthroughs",
           list: [
             "360 degree views of model flats and the site, viewable on any phone.",
@@ -51,7 +42,7 @@ export const ourServices = [
           ],
         },
         {
-          img: require("../assets/images/services/web-dev/expertise3.jpeg"),
+          img: require("../assets/images/re/d-availability.jpg"),
           title: "Live Unit Availability",
           list: [
             "Show which units are open, on hold or sold, with floor and facing filters.",
@@ -59,7 +50,7 @@ export const ourServices = [
           ],
         },
         {
-          img: require("../assets/images/services/web-dev/expertise4.jpeg"),
+          img: require("../assets/images/re/d-calculators.jpg"),
           title: "Calculators and Comparison Tools",
           list: [
             "EMI, total cost and payment plan calculators buyers can try themselves.",
@@ -67,7 +58,7 @@ export const ourServices = [
           ],
         },
         {
-          img: require("../assets/images/services/web-dev/expertise5.jpeg"),
+          img: require("../assets/images/re/d-landing.jpg"),
           title: "Landing Pages for Campaigns",
           list: [
             "A separate page for each ad campaign, launch offer or project phase.",
@@ -147,36 +138,26 @@ export const ourServices = [
     id: 2,
     title: "Buyer and channel partner apps",
     subHeading: "One app for buyers, one for the people who sell for you.",
-    image: require("../assets/images/services/app-dev1.jpeg"),
+    image: require("../assets/images/re/apps-card.jpg"),
+    cta: "Discuss Your Software Project",
     desc: "Buyer apps with construction updates, payment schedules and documents, and partner and site sales apps for inventory, lead registration and commissions.",
     serviceDetails: {
-      banner: require("../assets/images/services/app-dev/banner.jpeg"),
+      banner: require("../assets/images/re/apps-banner.jpg"),
       img1: require("../assets/images/services/app-dev/1.jpeg"),
       img2: require("../assets/images/services/app-dev/2.jpeg"),
       whyChooseContent: {
-        heading: "Why LinkAI for Real Estate Apps?",
+        heading: "Real Estate Apps That Simplify Every Step",
+        intro: "Buyers want updates, partners want clarity and your team wants fewer calls. Practical apps connect all three around your real estate workflows.",
         list: [
-          {
-            title: "Fewer Calls to Your Team",
-            desc: "Buyers check progress, payments and documents themselves instead of calling your customer relations team for every update.",
-          },
-          {
-            title: "A Clear Record for Everyone Who Sells",
-            desc: "Channel partners register leads and see their status and commission, so ownership disputes and chasing stop.",
-          },
-          {
-            title: "Works Where Your Team Works",
-            desc: "Simple screens for the sales floor and the site office, on Android and iPhone, built for fast use.",
-          },
-          {
-            title: "Connects to Your Systems",
-            desc: "Your CRM, accounts and inventory sheets stay the source of truth. The apps read from them and write back.",
-          },
+          { title: "Fewer Calls to Your Team", desc: "Give buyers convenient access to construction updates, payment details and documents, without calling your relations team." },
+          { title: "Clear Records for Every Partner", desc: "Help channel partners track registered leads, status updates and commissions, so ownership disputes stop." },
+          { title: "Designed for Your Team's Workflow", desc: "Make essential information available to sales teams and site office staff on their phones." },
+          { title: "Connected to Your Existing Systems", desc: "Integrate with your CRM and other business systems, so information is entered once and stays in sync." },
         ],
       },
       ourExpertiseContent: [
         {
-          img: require("../assets/images/services/app-dev/expertise1.jpeg"),
+          img: require("../assets/images/re/d-buyer-app.jpg"),
           title: "Buyer App",
           list: [
             "Construction progress with dated photos and milestone status for the buyer's own unit and tower.",
@@ -184,7 +165,7 @@ export const ourServices = [
           ],
         },
         {
-          img: require("../assets/images/services/app-dev/expertise2.jpeg"),
+          img: require("../assets/images/re/d-partner-app.jpg"),
           title: "Channel Partner App",
           list: [
             "Register a lead, see if it is already taken, and follow it through to booking.",
@@ -192,7 +173,7 @@ export const ourServices = [
           ],
         },
         {
-          img: require("../assets/images/services/app-dev/expertise3.jpeg"),
+          img: require("../assets/images/re/d-site-sales.jpg"),
           title: "Site Sales App",
           list: [
             "Inventory, cost sheets and offers on a tablet or phone, so quotes are right the first time.",
@@ -200,7 +181,7 @@ export const ourServices = [
           ],
         },
         {
-          img: require("../assets/images/services/app-dev/expertise4.png"),
+          img: require("../assets/images/re/d-handover.jpg"),
           title: "Handover and After Sales",
           list: [
             "Snag lists, possession checklists and service requests with status the buyer can follow.",
@@ -208,7 +189,7 @@ export const ourServices = [
           ],
         },
         {
-          img: require("../assets/images/services/app-dev/expertise10.jpeg"),
+          img: require("../assets/images/re/d-documents.jpg"),
           title: "Document Vault",
           list: [
             "Agreements, receipts, approvals and certificates in one place for each buyer.",
@@ -216,7 +197,7 @@ export const ourServices = [
           ],
         },
         {
-          img: require("../assets/images/services/app-dev/expertise13.jpeg"),
+          img: require("../assets/images/re/d-notifications.jpg"),
           title: "Announcements and Notifications",
           list: [
             "Project updates, payment reminders and event invites sent to the right buyers.",
@@ -259,40 +240,27 @@ export const ourServices = [
     id: 3,
     title: "AI for sales and operations",
     subHeading: "Know which buyer to call next and which project is slipping.",
-    image: require("../assets/images/services/ai1.png"),
+    image: require("../assets/images/re/ai-card.jpg"),
+    cta: "Explore Automation for Your Business",
     desc: "AI that scores leads, reads documents, tracks progress from site photos and predicts collection delays, with your team always making the final call.",
     serviceDetails: {
-      banner: require("../assets/images/services/ai/banner.jpeg"),
+      banner: require("../assets/images/re/ai-banner.jpg"),
       img1: require("../assets/images/services/ai/1.png"),
       img2: require("../assets/images/services/ai/2.jpeg"),
       whyChooseContent: {
-        heading: "Why LinkAI for Real Estate AI?",
+        heading: "AI That Solves Real Estate Business Challenges",
+        intro: "From lead follow up to collections and project operations, we apply AI to real business problems, with your data, your team's oversight and measurable outcomes.",
         list: [
-          {
-            title: "Start With a Business Problem",
-            desc: "We pick one costly problem first, such as slow lead follow up or late collections, and build the AI around it. No technology for its own sake.",
-          },
-          {
-            title: "Works With Your Data",
-            desc: "Your CRM, inventory, payment and site records feed the AI, so what it says is based on your own projects.",
-          },
-          {
-            title: "People Stay in Control",
-            desc: "The AI suggests and prepares. Your sales, finance and project teams approve what matters, and every action is logged.",
-          },
-          {
-            title: "Private and Secure",
-            desc: "Buyer details and financial records are handled with access controls, and your data stays yours.",
-          },
-          {
-            title: "Measured Against Your Numbers",
-            desc: "Site visits, bookings, collection days and complaint closing time are tracked, so you can see whether it helps.",
-          },
+          { title: "Start With a Business Problem", desc: "Identify a costly bottleneck, such as slow lead follow up or late collections, before deciding where AI can help." },
+          { title: "Works With Your Data", desc: "Connect AI workflows to your CRM, inventory, payment and site records, so its answers are based on your own projects." },
+          { title: "People Stay in Control", desc: "The AI suggests and prepares. Your team approves the important decisions, and every action is logged." },
+          { title: "Private and Secure", desc: "Apply the right access controls to buyer details and financial records. Your data stays yours." },
+          { title: "Measured Against Your Numbers", desc: "Track site visits, bookings, collection days and complaint closing time, so you can see whether it is improving performance." },
         ],
       },
       ourExpertiseContent: [
         {
-          img: require("../assets/images/services/ai/expertise2.jpeg"),
+          img: require("../assets/images/re/d-lead-scoring.jpg"),
           title: "Lead Scoring and Next Best Action",
           list: [
             "Ranks new and old leads by how likely they are to visit and book.",
@@ -300,7 +268,7 @@ export const ourServices = [
           ],
         },
         {
-          img: require("../assets/images/services/ai/expertise3.jpeg"),
+          img: require("../assets/images/re/d-site-photos.jpg"),
           title: "Construction Progress From Site Photos",
           list: [
             "Reads dated site photos to track progress against plan.",
@@ -308,7 +276,7 @@ export const ourServices = [
           ],
         },
         {
-          img: require("../assets/images/services/ai/expertise4.jpeg"),
+          img: require("../assets/images/re/d-doc-reading.jpg"),
           title: "Document Reading",
           list: [
             "Extracts key details from KYC, agreements and approvals.",
@@ -316,7 +284,7 @@ export const ourServices = [
           ],
         },
         {
-          img: require("../assets/images/services/ai/expertise5.jpeg"),
+          img: require("../assets/images/re/d-collections.jpg"),
           title: "Collections and Payment Follow Up",
           list: [
             "Predicts which milestone payments may be late and prepares reminders.",
@@ -324,7 +292,7 @@ export const ourServices = [
           ],
         },
         {
-          img: require("../assets/images/services/ai/expertise6.jpeg"),
+          img: require("../assets/images/re/d-call-summaries.jpg"),
           title: "Call and Meeting Summaries",
           list: [
             "Turns sales calls and site visit notes into a clear summary and next step in the CRM.",
@@ -332,7 +300,7 @@ export const ourServices = [
           ],
         },
         {
-          img: require("../assets/images/services/ai/expertise7.png"),
+          img: require("../assets/images/re/d-source-insights.jpg"),
           title: "Marketing and Source Insights",
           list: [
             "Shows which campaigns and portals bring site visits and bookings, not just enquiries.",
@@ -340,7 +308,7 @@ export const ourServices = [
           ],
         },
         {
-          img: require("../assets/images/services/ai/expertise8.jpeg"),
+          img: require("../assets/images/re/d-pricing.jpg"),
           title: "Pricing and Demand Signals",
           list: [
             "Reads enquiry patterns by configuration, floor and budget.",
@@ -412,36 +380,26 @@ export const ourServices = [
     id: 4,
     title: "WhatsApp and voice sales assistants",
     subHeading: "Every enquiry answered in seconds, day and night.",
-    image: require("../assets/images/services/ai1.png"),
+    image: require("../assets/images/re/assist-card.jpg"),
+    cta: "Discuss Your Requirements on WhatsApp",
     desc: "AI assistants that reply to every enquiry on WhatsApp and your website, qualify the buyer, book the site visit and follow up until they decide.",
     serviceDetails: {
-      banner: require("../assets/images/services/ai/banner.jpeg"),
+      banner: require("../assets/images/re/assist-banner.jpg"),
       img1: require("../assets/images/services/ai/1.png"),
       img2: require("../assets/images/services/ai/2.jpeg"),
       whyChooseContent: {
-        heading: "Why LinkAI for Real Estate Assistants?",
+        heading: "Assistants That Answer Every Buyer, Day and Night",
+        intro: "Buyers enquire at night, on Sundays and in the middle of a site visit. An assistant on WhatsApp and your website answers them at once and moves them to the next step.",
         list: [
-          {
-            title: "The First Reply Wins",
-            desc: "A buyer who enquires at night or on a Sunday gets an answer at once, before another builder replies.",
-          },
-          {
-            title: "Qualifies Like Your Best Salesperson",
-            desc: "Asks budget, configuration, location and timeline in a friendly way, and hands over only buyers who are ready to talk.",
-          },
-          {
-            title: "Books Site Visits",
-            desc: "Offers slots, confirms by message, reminds the buyer the day before and tells the salesperson who is coming.",
-          },
-          {
-            title: "Speaks Your Buyers' Languages",
-            desc: "Replies in English, Hindi and regional languages, in your brand's tone, with a person always one tap away.",
-          },
+          { title: "The First Reply Wins", desc: "A buyer who enquires at night or on a Sunday gets an answer at once, before another builder replies." },
+          { title: "Qualifies Like Your Best Salesperson", desc: "Asks budget, configuration, location and timeline in a friendly way, and hands over the buyers who are ready to talk." },
+          { title: "Books Site Visits", desc: "Offers slots, confirms by message, reminds the buyer the day before and tells the salesperson who is coming." },
+          { title: "Speaks Your Buyers' Languages", desc: "Replies in English, Hindi and regional languages, in your brand's tone, with a person always one tap away." },
         ],
       },
       ourExpertiseContent: [
         {
-          img: require("../assets/images/services/ai/expertise1.jpeg"),
+          img: require("../assets/images/re/d-whatsapp.jpg"),
           title: "Enquiry Response on WhatsApp and Web",
           list: [
             "Answers questions on price range, configuration, possession and location instantly.",
@@ -449,7 +407,7 @@ export const ourServices = [
           ],
         },
         {
-          img: require("../assets/images/services/ai/expertise2.jpeg"),
+          img: require("../assets/images/re/d-visit-booking.jpg"),
           title: "Qualification and Site Visit Booking",
           list: [
             "Collects budget, timeline and preferences and records them in your CRM.",
@@ -457,7 +415,7 @@ export const ourServices = [
           ],
         },
         {
-          img: require("../assets/images/services/ai/expertise3.jpeg"),
+          img: require("../assets/images/re/d-voice.jpg"),
           title: "Voice Assistants",
           list: [
             "Calls new enquiries within minutes to confirm interest and fix a visit.",
@@ -465,7 +423,7 @@ export const ourServices = [
           ],
         },
         {
-          img: require("../assets/images/services/ai/expertise4.jpeg"),
+          img: require("../assets/images/re/d-helpdesk.jpg"),
           title: "Buyer Helpdesk",
           list: [
             "Answers payment, document and construction questions from existing buyers.",

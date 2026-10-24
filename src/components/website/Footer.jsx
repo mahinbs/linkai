@@ -14,9 +14,9 @@ const Footer = () => {
   return (
     <div className="bg-white/10 py-12">
       <div className="wrapper flex md:flex-row flex-col flex-wrap justify-between gap-10 md:gap-7">
-        <div className="flex flex-col md:items-center gap-3">
+        <div className="flex flex-col items-center gap-3 w-full md:w-auto">
           <img src={logo} alt="Logo" className="w-[12rem] object-contain" />
-          <div className="flex gap-3">
+          <div className="flex gap-3 justify-center">
             <Link
               to={companyDetails.linkedin}
               className="w-8 h-8 flex items-center justify-center bg-primary rounded-full transition-all duration-300 hover:bg-primary/80 text-black"

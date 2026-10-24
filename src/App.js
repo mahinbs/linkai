@@ -14,6 +14,7 @@ import LandingPage from "./pages/LandingPage/LandingPage";
 import { Toaster } from "react-hot-toast";
 import WhatsappButton from "./components/common/WhatsappButton";
 import Blogs from "./pages/Blogs/Blogs";
+import BlogPost from "./pages/BlogPost/BlogPost";
 
 const Home = lazy(() => import("./pages/Home/Home"));
 const AboutUs = lazy(() => import("./pages/AboutUs/AboutUs"));
@@ -45,6 +46,7 @@ function App() {
                 <Route path="about-us" element={<AboutUs />} />
                 <Route path="contact-us" element={<ContactUs />} />
                 <Route path="blogs" element={<Blogs />} />
+                <Route path="blogs/:slug" element={<BlogPost />} />
                 <Route path="services" element={<Services />} />
                 <Route path="services/:param" element={<ServiceDetails />} />
               </Route>

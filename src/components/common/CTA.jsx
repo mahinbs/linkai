@@ -1,29 +1,24 @@
-import img from "../../assets/images/cta-img.png";
 import { Link } from "react-router-dom";
 
-const CTA = () => {
+/**
+ * The closing band on the services page (Dilli, 24 Oct 2026 review: solution-led, not sales-led). His suggested copy,
+ * one button, no picture.
+ */
+const CTA = ({
+  title = "Turn More Property Enquiries Into Site Visits",
+  text = "Help your sales team respond faster, follow up consistently, and keep potential buyers moving toward their next step with smarter technology.",
+  button = "Let's Talk",
+}) => {
   return (
-    <div className="py-8">
-      <div className="wrapper !px-0">
-        <div className="grid md:grid-cols-[30%,1fr] bg-primary">
-          <div data-aos="fade-right">
-            <img
-              src={img}
-              alt="CTA"
-              loading="lazy"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div data-aos="fade-up" className="wrapper space-y-7 text-black px-[3rem] sm:px-[5rem] py-[3rem]">
-            <h2 className="text1">Ready to stop losing buyers to slow follow up?</h2>
-            <div>
-              <Link
-                to="/contact-us"
-                className="p-3 btn !rounded bg-black text-white hover:bg-black/80"
-              >
-                Talk to Us
-              </Link>
-            </div>
+    <div className="py-10">
+      <div className="wrapper">
+        <div data-aos="fade-up" className="bg-primary text-black rounded-2xl px-7 sm:px-12 py-10 space-y-4">
+          <h2 className="text1 !leading-tight max-w-3xl">{title}</h2>
+          <p className="desc max-w-3xl text-black/80">{text}</p>
+          <div className="pt-2">
+            <Link to="/contact-us" className="btn inline-block bg-black text-white hover:bg-black/80 px-7">
+              {button}
+            </Link>
           </div>
         </div>
       </div>

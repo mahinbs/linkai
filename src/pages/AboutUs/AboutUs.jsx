@@ -1,6 +1,6 @@
 import banner from "../../assets/images/banners/aboutus.png";
-import img1 from "../../assets/images/our-story.png";
-import img2 from "../../assets/images/client-engagement-and-support.png";
+import img1 from "../../assets/images/re/about-story.jpg";
+import img2 from "../../assets/images/re/about-delivery.jpg";
 import img3 from "../../assets/images/ongoing-support.png";
 import img4 from "../../assets/images/Partnership Beyond Projects.png";
 import { circleImg, futureGoals } from "../../content/constant";
@@ -38,19 +38,24 @@ const AboutUs = () => {
                 loading="lazy"
                 src={img1}
                 className="w-full h-full aspect-[16/5] object-cover"
-                alt=""
+                alt="Residential apartment buildings"
               />
             </div>
             <div data-aos="fade-up">
               <p className="desc">
                 LinkAI Technologies was founded on a simple idea: technology
-                should solve real problems, not add complexity. We chose real
-                estate because its problems are clear and costly: leads that go
-                cold, site visits that are missed, buyers who cannot get
-                updates, and payments and complaints that slip through the
-                cracks. Today we build websites, apps, AI and automation for
-                real estate developers and builders, and for the channel
-                partners and sales teams who work with them.
+                should solve real problems, not add complexity. We focus on
+                real estate because its challenges are clear and costly: leads
+                that go cold, site visits that are missed, buyers who cannot get
+                timely updates, and payments or complaints that slip through the
+                cracks.
+              </p>
+              <p className="desc pt-4">
+                We work with developers, builders, channel partners and sales
+                teams to find where these problems start, then solve them with
+                the right mix of AI, automation workflows, websites and apps,
+                applied only where it makes a real difference to how they sell,
+                operate and look after buyers.
               </p>
             </div>
           </div>
@@ -63,7 +68,7 @@ const AboutUs = () => {
           className="wrapper flex flex-col items-center gap-3"
         >
           <h2 className="text1 max-w-3xl text-center">
-            We Stay Close From Kickoff to Launch
+            By Your Side From Kickoff and Beyond
           </h2>
           <div className="h-2 w-[18rem] bg-white"></div>
         </div>
@@ -73,15 +78,16 @@ const AboutUs = () => {
               data-aos="fade-right"
               loading="lazy"
               src={img2}
-              className="object-contain w-full aspect-square max-h-[30rem]"
-              alt="Client Engagement & Support"
+              className="object-cover w-full aspect-square max-h-[30rem] rounded-2xl"
+              alt="Planning a project together"
             />
           </div>
           <div data-aos="fade-up" className="space-y-5">
             <h4 className="text2">Transparent, Collaborative Delivery</h4>
             <p className="desc">
-              You always know where the project stands and what comes next. Our
-              team works as an extension of yours—not a black box offshore.
+              You always know where the project stands and what comes next.
+              From the first workshop to launch, and long after, our team works
+              as an extension of yours, not a black box.
             </p>
             <ul className="space-y-5 pt-3">
               <li>
@@ -237,11 +243,11 @@ const AboutUs = () => {
             Vision
           </h2>
           <p data-aos="fade-up" className="desc max-w-4xl mx-auto">
-            To make advanced technology approachable for every real estate
-            team: project websites that bring in visits, apps that keep buyers
-            and partners informed, AI that saves hours of follow up, and
-            assistants that answer every enquiry. We build with clarity, ship
-            with discipline, and stand behind what we deliver.
+            To be the AI technology partner every real estate business can
+            rely on: solving the problems that cost them buyers, time and
+            money, from the first enquiry to handover. We start with the
+            problem, apply technology with clarity, and stand behind what we
+            deliver.
           </p>
         </div>
         <div className="wrapper py-16 text-center">

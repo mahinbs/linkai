@@ -12,9 +12,9 @@ const ProjectJourney = () => {
             <span className="text-primary1">a Project</span>
           </h2>
           <p data-aos="fade-up" className="desc max-w-3xl mx-auto">
-            A real estate project is won or lost across five stages. We build
-            the technology for each one, so your sales, site and accounts teams
-            work from the same facts.
+            A real estate project is won or lost across five stages. At each
+            one we solve a different problem, so your sales, site and accounts
+            teams work from the same facts.
           </p>
         </div>
         <ol className="grid sm:grid-cols-2 lg:grid-cols-5 gap-5">
@@ -38,9 +38,10 @@ const ProjectJourney = () => {
               key={a.title}
               data-aos="fade-up"
               className={`rounded-2xl p-6 space-y-2 border ${
-                i === 0
+                // White, black, white: the middle card carries the dark tone (Dilli, 24 Oct 2026 review).
+                i % 2 === 1
                   ? "bg-black text-white border-black"
-                  : "bg-white border-black/20"
+                  : "bg-[#f5f6f6] border-black/15"
               }`}
             >
               <h3 className="text3">{a.title}</h3>
@@ -53,7 +54,7 @@ const ProjectJourney = () => {
             to="/contact-us"
             className="btn inline-block bg-primary text-black uppercase min-w-[12rem] hover:shadow-large hover:shadow-primary/60"
           >
-            Talk to Our Real Estate Team
+            Talk to Our AI Solutions Team
           </Link>
         </div>
       </div>

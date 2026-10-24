@@ -5,8 +5,8 @@ import { createUrlParam } from "../../utils/helper";
 import useScrollTriggerAnimations from "../../hooks/useScrollTriggerAnimations";
 
 /**
- * The real estate industry's everyday problems, each with how our technology answers it (Dilli, 18 Oct 2026: visitors
- * should immediately see the industry we serve, the challenges, and how technology helps).
+ * The real estate industry's everyday problems (Dilli, 18 Oct 2026). Since his 24 Oct review each card says only the
+ * problem, with a picture people recognise, and links to the solution page that answers it.
  */
 const PainPoints = ({ id = "challenges" }) => {
   const scrollRef = useScrollTriggerAnimations();
@@ -50,38 +50,51 @@ const PainPoints = ({ id = "challenges" }) => {
           data-aos="fade-up"
           className="desc text-center max-w-3xl mx-auto pt-4 text-[#A4B4C3] relative z-10"
         >
-          Where it goes wrong, and how our technology fixes it.
+          Find the one that sounds like your week, and see how LinkAI solves
+          it.
         </p>
       </div>
       <div className="relative h-full pb-10 xl:pb-16">
         <div className="z-0 absolute top-0 h-1/2 w-full"></div>
         <div className="z-0 absolute top-1/2 h-1/2 w-full bg-black"></div>
-        <div className="wrapper grid md:grid-cols-2 xl:grid-cols-4 gap-6 pt-10 relative z-10">
+        <div className="wrapper grid sm:grid-cols-2 xl:grid-cols-4 gap-6 pt-10 relative z-10">
           {painPoints.map((item) => (
-            <div key={item.id} data-aos="fade-up" className="h-full">
-              <div className="relative group backdrop-blur-lg space-y-3 border border-white/20 p-5 rounded-[1rem] shadow-large shadow-black/20 hover:bg-primary hover:text-black transition-all duration-500 h-full flex flex-col">
-                <p className="text-xs uppercase tracking-widest text-primary group-hover:text-black">
-                  {item.stage}
-                </p>
-                <h3 className="text4">{item.title}</h3>
-                <p className="desc text-[#A4B4C3] group-hover:text-black">
-                  {item.pain}
-                </p>
-                <div className="border-t border-white/20 group-hover:border-black/30 pt-3 mt-auto space-y-2">
-                  <p className="text-sm font-semibold text-primary group-hover:text-black">
-                    How technology helps
+            <Link
+              key={item.id}
+              data-aos="fade-up"
+              to={`/services/${createUrlParam(item.fix)}`}
+              className="group block h-full"
+            >
+              <div className="relative backdrop-blur-lg border border-white/20 rounded-[1rem] overflow-hidden shadow-large shadow-black/20 bg-[#1a1a1a] group-hover:border-primary transition-all duration-500 h-full flex flex-col">
+                <div className="overflow-hidden aspect-[16/9]">
+                  <img
+                    loading="lazy"
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-all duration-500"
+                  />
+                </div>
+                <div className="p-5 space-y-2 flex flex-col flex-1">
+                  <p className="text-xs uppercase tracking-widest text-primary">
+                    {item.stage}
                   </p>
-                  <p className="text-sm">{item.help}</p>
-                  <Link
-                    to={`/services/${createUrlParam(item.fix)}`}
-                    className="inline-block text-sm underline underline-offset-4 hover:text-black"
-                  >
-                    See the solution
-                  </Link>
+                  <h3 className="text4">{item.title}</h3>
+                  <p className="text-sm text-[#A4B4C3]">{item.short}</p>
+                  <p className="mt-auto pt-3 text-sm font-semibold text-primary underline-offset-4 group-hover:underline">
+                    See how LinkAI solves it →
+                  </p>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
+        </div>
+        <div className="wrapper text-center pt-10 relative z-10">
+          <Link
+            to="/contact-us"
+            className="btn inline-block bg-primary text-black uppercase min-w-[12rem] hover:shadow-large hover:shadow-primary/60"
+          >
+            Let's Solve Your Business Challenge
+          </Link>
         </div>
       </div>
     </section>

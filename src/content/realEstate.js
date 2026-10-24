@@ -2,14 +2,18 @@
 // pain points and how our technology answers each. No client names, results or numbers are claimed here.
 
 export const positioning = {
-  line: "Technology for Real Estate Developers and Builders",
-  sub: "LinkAI Technologies builds the websites, apps, AI and automation that real estate companies use to sell faster, run projects cleanly and keep buyers happy.",
+  line: "Your AI Technology Partner for Real Estate",
+  sub: "LinkAI Technologies solves the problems that slow real estate businesses down, with the right mix of AI, automation, websites and apps, so developers and builders sell faster, operate smoother and give buyers a better experience.",
 };
 
 // Pain points, in the order a project meets them. `fix` is the solution area (a /services page title) that answers it.
+// The home page shows only the problem (`short`) and links to its solution (Dilli, 24 Oct 2026 review: say the pain, let
+// people click through to how LinkAI solves it). `pain` and `help` stay for longer pages.
 export const painPoints = [
   {
     id: 1,
+    image: require("../assets/images/re/pain-leads.jpg"),
+    short: "Enquiries come in at all hours. By the time someone calls back, the buyer has spoken to a competitor.",
     stage: "Marketing",
     title: "Leads go cold before anyone calls",
     pain: "Enquiries arrive from ads, portals and walk ins at all hours. Replies come hours later, and by then the buyer has spoken to a competitor.",
@@ -18,6 +22,8 @@ export const painPoints = [
   },
   {
     id: 2,
+    image: require("../assets/images/re/pain-spend.jpg"),
+    short: "Campaigns look busy, but you cannot see which ones actually bring site visits and bookings.",
     stage: "Marketing",
     title: "You cannot tell which spend brings buyers",
     pain: "Campaigns are judged by enquiry counts, but only some enquiries ever visit or book. Money keeps going to sources that look busy.",
@@ -26,6 +32,8 @@ export const painPoints = [
   },
   {
     id: 3,
+    image: require("../assets/images/re/pain-visits.jpg"),
+    short: "Visits are fixed over calls, forgotten and missed, and the follow up depends on who remembers.",
     stage: "Sales",
     title: "Site visits that do not happen",
     pain: "Visits are fixed over calls, forgotten, and missed. After the visit, the follow up depends on who remembers.",
@@ -34,6 +42,8 @@ export const painPoints = [
   },
   {
     id: 4,
+    image: require("../assets/images/re/pain-partners.jpg"),
+    short: "Two partners claim the same lead, commissions are disputed and nobody is sure who brought whom.",
     stage: "Sales",
     title: "Channel partner confusion",
     pain: "The same lead is claimed by two partners, commissions are argued over, and nobody is sure who brought whom.",
@@ -42,6 +52,8 @@ export const painPoints = [
   },
   {
     id: 5,
+    image: require("../assets/images/re/pain-prices.jpg"),
+    short: "Price sheets live in spreadsheets, so a unit that is already sold, or an old rate, gets quoted.",
     stage: "Sales",
     title: "Wrong prices and unclear availability",
     pain: "Inventory and price sheets live in spreadsheets. A salesperson quotes a unit that is already sold, or an old rate.",
@@ -50,6 +62,8 @@ export const painPoints = [
   },
   {
     id: 6,
+    image: require("../assets/images/re/pain-updates.jpg"),
+    short: "Your relations team spends the day answering the same question: how is my tower progressing?",
     stage: "Construction",
     title: "Buyers keep calling for updates",
     pain: "Buyers want to know how their tower is progressing. Your relations team spends the day answering the same calls.",
@@ -58,6 +72,8 @@ export const painPoints = [
   },
   {
     id: 7,
+    image: require("../assets/images/re/pain-payments.jpg"),
+    short: "Reminders go out by hand, and accounts finds out who is late only when the month closes.",
     stage: "Collections",
     title: "Milestone payments arrive late",
     pain: "Demand letters and reminders are sent by hand. Accounts finds out who is late only when the month closes.",
@@ -66,6 +82,8 @@ export const painPoints = [
   },
   {
     id: 8,
+    image: require("../assets/images/re/pain-handover.jpg"),
+    short: "Snags and service requests arrive on calls and WhatsApp, with no owner and no due date.",
     stage: "Handover",
     title: "After sales complaints get lost",
     pain: "Snags and service requests arrive on WhatsApp and calls, with no owner and no due date. Unhappy owners talk to prospective buyers.",

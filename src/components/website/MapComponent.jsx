@@ -19,7 +19,7 @@ let DefaultIcon = L.icon({
 
 L.Marker.prototype.options.icon = DefaultIcon;
 
-const MapComponent = () => {
+const MapComponent = ({ compact = false }) => {
   const location = useMemo(() => companyDetails.mapCenter, []);
   const zoom = companyDetails.mapZoom;
 
@@ -35,7 +35,7 @@ const MapComponent = () => {
     <MapContainer
       center={location}
       zoom={zoom}
-      className="h-[70vh] w-full z-0 outline-none grayscale"
+      className={`${compact ? "h-[240px]" : "h-[70vh]"} w-full z-0 outline-none grayscale`}
       whenCreated={(mapInstance) => (mapRef.current = mapInstance)} // Save the map instance to ref
       scrollWheelZoom={false} // Disable zooming with the scroll wheel
       zoomControl={false}

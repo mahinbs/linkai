@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import banner from "../../assets/images/banners/services.jpg";
+import banner from "../../assets/images/re/services-hero.jpg";
 import Faqs from "../../components/common/Faqs";
 import CTA from "../../components/common/CTA";
 import { ourServices } from "../../content/ourServices";
@@ -9,20 +9,23 @@ const Services = () => {
   return (
     <>
       <section className="relative w-full aspect-video min-h-[60vh] max-h-[80vh]">
-        <div className="absolute inset-0 h-full w-full bg-black/50 z-[-1]"></div>
+        <div className="absolute inset-0 h-full w-full bg-gradient-to-r from-black/80 via-black/50 to-black/20 z-[-1]"></div>
         <img
           src={banner}
           className="object-cover w-full h-full absolute inset-0 z-[-2]"
           alt="Banner"
         />
-        <div className="wrapper flex h-full py-[6rem] md:pt-[8rem] pb-16 items-center justify-start">
-          <h1 data-aos="fade-right" className="text_xl">
+        <div className="wrapper flex flex-col h-full py-[6rem] md:pt-[8rem] pb-16 justify-center items-start">
+          <p data-aos="fade-right" className="uppercase tracking-widest text-sm text-primary font-semibold">
             Solutions for Real Estate
+          </p>
+          <h1 data-aos="fade-right" className="text_xl max-w-4xl">
+            The Right Technology for Every Real Estate Challenge
           </h1>
           <p data-aos="fade-up" className="desc max-w-2xl mt-4 text-white/90">
-            Project websites, buyer and partner apps, AI for sales and
-            operations, and assistants that answer every enquiry. Built for
-            developers and builders.
+            From the first enquiry to handover, we combine websites, apps, AI
+            and automation to solve the problems that slow developers and
+            builders down.
           </p>
         </div>
       </section>

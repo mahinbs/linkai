@@ -8,6 +8,8 @@ const WhatsappButton = () => {
     <Link
       to={companyDetails.whatsapp}
       target="_blank"
+      aria-label="Discuss your requirements on WhatsApp"
+      title="Discuss Your Requirements on WhatsApp"
       className="fixed z-50 bottom-6 right-6 text-[2rem] bg-primary2 text-black border-black border-2 rounded-full p-4 hover:bg-black hover:border-primary2 hover:text-primary2 transition-all duration-300 hover:-translate-y-1"
     >
       <BsWhatsapp />

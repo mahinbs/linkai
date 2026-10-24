@@ -1,270 +1,60 @@
-import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import { ImPhone } from "react-icons/im";
-import { Link, useNavigate } from "react-router-dom";
-import { circleImg, companyDetails } from "../../content/constant";
-import { IoLocation, IoMail } from "react-icons/io5";
-import { SpinnerContext } from "./SpinnerContext";
-import { useForm } from "react-hook-form";
-import axios from "axios";
-import toast from "react-hot-toast";
+import { IoMail } from "react-icons/io5";
+import { companyDetails } from "../../content/constant";
+import EnquiryForm from "./EnquiryForm";
 
-const ContactForm2 = ({ isDark }) => {
-  const { setLoading } = useContext(SpinnerContext);
-  const navigate = useNavigate();
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors },
-  } = useForm({
-    defaultValues: {
-      fullName: "",
-      email: "",
-      phone: "",
-      message: "",
-    },
-    mode: "all",
-  });
-
-  const onSubmit = async (values) => {
-    setLoading(true);
-    try {
-      let body =
-        "Full Name : " +
-        values.fullName +
-        "\n\n" +
-        "Email : " +
-        values.email +
-        "\n\n" +
-        "Phone : " +
-        values.phone +
-        "\n\n" +
-        "Message : " +
-        values.message +
-        "\n\n";
-
-      const data = {
-        body,
-        name: "LinkAI",
-        subject: values.subject,
-        to: companyDetails.email,
-      };
-
-      const res = await axios.post(
-        "https://send-mail-redirect-boostmysites.vercel.app/send-email",
-        data,
-      );
-
-      if (res.data.success) {
-        toast.success(res.data.message);
-        reset();
-        navigate("/thank-you");
-      } else {
-        toast.error(res.data.message);
-      }
-    } catch (err) {
-      toast.error("Something went wrong");
-    } finally {
-      setLoading(false);
-    }
-  };
+/**
+ * "Let's talk", at the foot of the home, about and solution pages. Redone after Dilli's 24 Oct 2026 review: one dark
+ * panel with a clear headline, a short line, email and phone, and the enquiry form beside it. The addresses live in the
+ * footer and on the contact page only, so they are not repeated here.
+ */
+const ContactForm2 = ({ isDark, buttonLabel = "Send Your Enquiry" }) => {
   return (
-    <div
+    <section
       id="contact"
-      className={`${
-        isDark ? "bg-black text-white" : "bg-white text-black"
-      } text-black py-14 relative overflow-hidden`}
+      className={`${isDark ? "bg-black" : "bg-white"} py-14 relative overflow-hidden`}
     >
-      {isDark ? (
-        <img
-          data-aos="fade-up-right"
-          loading="lazy"
-          src={circleImg}
-          width={150}
-          height={150}
-          className="object-contain absolute w-[10rem] h-[10rem] top-[2rem] right-[-2rem] -z-0"
-          alt=""
-        />
-      ) : (
-        <div
-          data-aos="fade-up-right"
-          className="z-0 w-[8rem] md:w-[12rem] h-[8rem] md:h-[12rem] rounded-full bg-[radial-gradient(circle,_#FFFFFF,_#239FD2)] absolute -bottom-4 -right-4 drop-shadow-2xl"
-        ></div>
-      )}
-      <div className="wrapper flex flex-col-reverse md:grid grid-cols-2 gap-7 relative z-[1]">
-        <form
-          onSubmit={handleSubmit(onSubmit)}
-          className="bg-black text-white p-7 border-[2px] border-primary rounded-[2.5rem] space-y-5"
-        >
-          <div className="grid sm:grid-cols-2 md:grid-cols-1 xl:grid-cols-2 gap-4">
-            <div className="space-y-1 grid">
-              <label className="text-sm">Full Name</label>
-              <input
-                type="text"
-                className="p-3 rounded-[2rem] outline-none border-2 border-primary bg-transparent w-full"
-                placeholder="Enter your full name"
-                {...register("fullName", {
-                  required: "Full Name is required",
-                  validate: (value) => {
-                    if (value.trim() === "") {
-                      return "Full Name is required";
-                    }
-                  },
-                })}
-              />
-              {errors.fullName && (
-                <small className="text-red-500">
-                  {errors.fullName.message}
-                </small>
-              )}
-            </div>
-            <div className="space-y-1 grid">
-              <label className="text-sm">Email</label>
-              <input
-                type="email"
-                className="p-3 rounded-[2rem] outline-none border-2 border-primary bg-transparent w-full"
-                placeholder="Enter your email address"
-                {...register("email", {
-                  required: "Email is required",
-                  pattern: {
-                    value: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-                    message: "Invalid email address",
-                  },
-                })}
-              />
-              {errors.email && (
-                <small className="text-red-500">{errors.email.message}</small>
-              )}
-            </div>
-          </div>
-          <div className="space-y-1 grid">
-            <label className="text-sm">Phone Number</label>
-            <input
-              type="tel"
-              className="p-3 rounded-[2rem] outline-none border-2 border-primary bg-transparent w-full"
-              placeholder="Enter your phone number"
-              {...register("phone", {
-                required: "Phone number is required",
-                pattern: {
-                  value: /^\+?[\d\s\-()]{6,14}\d$/,
-                  message: "Entered phone number is invalid",
-                },
-              })}
-            />
-            <small className="text-red-500">{errors.phone?.message}</small>
-          </div>
-          <div className="space-y-1 grid">
-            <label className="text-sm">Subject</label>
-            <input
-              type="text"
-              className="p-3 rounded-[2rem] outline-none border-2 border-primary bg-transparent w-full"
-              placeholder="Enter subject"
-              {...register("subject", {
-                required: "Subject is required",
-                validate: (value) => {
-                  if (value.trim() === "") {
-                    return "Subject is required";
-                  }
-                },
-              })}
-            />
-            {errors.subject && (
-              <small className="text-red-500">{errors.subject.message}</small>
-            )}
-          </div>
-          <div className="space-y-1 grid">
-            <label className="text-sm">Message</label>
-            <textarea
-              className="p-3 rounded-[2rem] outline-none border-2 border-primary bg-transparent w-full"
-              placeholder="Enter your message here"
-              {...register("message", {
-                required: "Message is required",
-                validate: (value) => {
-                  if (value.trim() === "") {
-                    return "Message is required";
-                  }
-                },
-              })}
-            />
-            {errors.message && (
-              <small className="text-red-500">{errors.message.message}</small>
-            )}
-          </div>
-          <button
-            type="submit"
-            className="btn w-full bg-white text-black hover:bg-primary border border-primary"
-          >
-            Submit
-          </button>
-        </form>
-        <div className="space-y-4">
-          <h2 className="text1">Let's talk</h2>
-          <div className="h-2 w-[18rem] bg-black"></div>
-          <h5 className="text2">Have a process worth improving?</h5>
-          <p className="desc">
-            Tell us what is slowing your team down. We will bring the right
-            questions and a clear next step.
-          </p>
-          <div className="space-y-4">
-            <div className="flex items-center gap-2">
-              <div
-                className={`${
-                  isDark ? "bg-white text-black" : "bg-black text-white"
-                } w-12 h-12 rounded-full flex items-center justify-center`}
-              >
-                <ImPhone size={24} />
-              </div>
-              <Link
-                to={`tel:${companyDetails.phone}`}
-                className="desc hover:text-primary1"
-              >
-                {companyDetails.phone}
-              </Link>
-            </div>
-            <div className="flex items-center gap-2">
-              <div
-                className={`${
-                  isDark ? "bg-white text-black" : "bg-black text-white"
-                } w-12 h-12 rounded-full flex items-center justify-center`}
-              >
-                <IoMail size={24} />
-              </div>
+      <div className="wrapper">
+        <div className="bg-[#0d1a22] text-white rounded-[2rem] border border-primary/30 p-7 md:p-12 grid lg:grid-cols-[42%_1fr] gap-10">
+          <div data-aos="fade-right" className="space-y-5">
+            <p className="text-xs uppercase tracking-[0.25em] text-primary font-semibold">
+              Let's talk
+            </p>
+            <h2 className="text1 !leading-tight">
+              Have a process <span className="text-primary">worth improving?</span>
+            </h2>
+            <p className="desc text-white/80">
+              Tell us what is slowing your team down. We will bring the right
+              questions and a clear next step.
+            </p>
+            <div className="space-y-3 pt-2">
               <Link
                 to={`mailto:${companyDetails.email}`}
-                className="desc hover:text-primary1"
+                className="flex items-center gap-3 hover:text-primary w-fit"
               >
-                {companyDetails.email}
+                <span className="w-10 h-10 rounded-full bg-primary/15 text-primary flex items-center justify-center">
+                  <IoMail size={18} />
+                </span>
+                <span className="desc">{companyDetails.email}</span>
+              </Link>
+              <Link
+                to={`tel:${companyDetails.phone}`}
+                className="flex items-center gap-3 hover:text-primary w-fit"
+              >
+                <span className="w-10 h-10 rounded-full bg-primary/15 text-primary flex items-center justify-center">
+                  <ImPhone size={16} />
+                </span>
+                <span className="desc">{companyDetails.phone}</span>
               </Link>
             </div>
-
-            <div className="flex gap-2">
-              <div
-                className={`${
-                  isDark ? "bg-white text-black" : "bg-black text-white"
-                } w-12 h-12 rounded-full flex items-center justify-center`}
-              >
-                <IoLocation size={28} />
-              </div>
-              <div className="space-y-1 flex flex-col gap-1">
-                <p className="desc max-w-[16rem]">{companyDetails.location}</p>
-              </div>
-            </div>
-            <div className="flex gap-2">
-              <div
-                className={`${
-                  isDark ? "bg-white text-black" : "bg-black text-white"
-                } w-12 h-12 rounded-full flex items-center justify-center`}
-              >
-                <IoLocation size={28} />
-              </div>
-              <div className="space-y-1 flex flex-col gap-1">
-                <p className="desc max-w-[16rem]">{companyDetails.location2}</p>
-              </div>
-            </div>
+          </div>
+          <div data-aos="fade-up">
+            <EnquiryForm dark buttonLabel={buttonLabel} />
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
