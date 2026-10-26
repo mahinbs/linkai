@@ -7,7 +7,6 @@ import ServicesSection from "./components/ServicesSection";
 import WorkProcess from "../../components/common/WorkProcess";
 import { useEffect } from "react";
 import gsap from "gsap";
-import robot from "../../assets/images/ai-robot.png";
 import ContactForm2 from "../../components/common/ContactForm2";
 import HeroBannerVideo from "../../components/common/HeroBannerVideo";
 
@@ -15,7 +14,7 @@ export default function Home() {
   useEffect(() => {
     const tl = gsap.timeline();
     tl.to("#robot", {
-      translateY: -80,
+      translateY: -14,
       duration: 2,
       ease: "power1.inOut",
       repeat: -1,
@@ -31,7 +30,7 @@ export default function Home() {
     <>
       <section className="min-h-screen flex flex-col justify-center relative overflow-hidden">
         <HeroBannerVideo />
-        <div className="wrapper relative z-10 flex flex-col-reverse lg:grid grid-cols-[65%_1fr] items-center lg:items-end gap-5">
+        <div className="wrapper relative z-10 flex flex-col lg:grid grid-cols-[65%_1fr] items-center lg:items-end gap-5 pb-16 lg:pb-0">
           <div
             data-aos="fade-right"
             className="space-y-3 relative z-10 py-[6rem]"
@@ -59,20 +58,32 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="h-[38vh] lg:h-[50vh] flex justify-start translate-y-2/3 lg:translate-y-0">
-            <img
-              loading="lazy"
+          {/* Dilli's review (26 Oct 2026): the floating robot did not say "real estate"; this panel shows what LinkAI does
+              for a sales team, in the same spot and with the same gentle float. */}
+          <div className="w-full lg:h-[50vh] flex justify-center lg:justify-start items-end lg:pb-[6rem]">
+            <div
               id="robot"
-              src={robot}
-              srcSet={`${robot} 300w,
-             ${robot} 600w,
-             ${robot} 1200w`}
-              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
-              alt="robot"
-              width="600"
-              height="400"
-              className="h-[32vh] lg:h-[40vh] w-fit object-contain"
-            />
+              aria-label="What LinkAI does for a real estate sales team"
+              className="w-full max-w-sm rounded-2xl border border-white/15 bg-white/10 backdrop-blur-md p-4 space-y-3 shadow-2xl"
+            >
+              <p className="text-xs uppercase tracking-widest text-white/60">
+                Today, on autopilot
+              </p>
+              {[
+                ["WhatsApp enquiry", "2 BHK, Whitefield", "Answered in 20 seconds"],
+                ["Site visit", "Saturday, 11:00 AM", "Booked and reminded"],
+                ["Buyer update", "Tower B, floor 9 slab", "Sent to 140 buyers"],
+              ].map(([title, detail, done]) => (
+                <div key={title} className="flex items-start gap-3 rounded-xl bg-black/40 p-3">
+                  <span className="mt-1 h-2.5 w-2.5 shrink-0 rounded-full bg-primary" />
+                  <div className="min-w-0">
+                    <p className="text-sm font-semibold text-white">{title}</p>
+                    <p className="text-xs text-white/70 truncate">{detail}</p>
+                    <p className="text-xs text-primary mt-0.5">{done}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
