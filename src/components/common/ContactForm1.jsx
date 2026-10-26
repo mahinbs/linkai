@@ -46,7 +46,7 @@ const ContactForm1 = () => {
         body,
         name: "LinkAI",
         subject: values.subject,
-        to: companyDetails.email,
+        to: companyDetails.enquiryEmail || companyDetails.email,
       };
 
       const res = await axios.post(

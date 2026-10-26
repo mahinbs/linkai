@@ -47,7 +47,7 @@ const EnquiryForm = ({ dark = true, buttonLabel = "Send Your Enquiry" }) => {
         body,
         name: "LinkAI",
         subject: `Website enquiry: ${values.help}`,
-        to: companyDetails.email,
+        to: companyDetails.enquiryEmail || companyDetails.email,
       });
       if (res.data.success) {
         toast.success(res.data.message);

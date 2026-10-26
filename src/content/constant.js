@@ -10,6 +10,9 @@ export { logo, circleImg, moonShapeImg };
 
 export const companyDetails = {
   email: "support@linkai.in",
+  // Where the website's enquiry forms email to. linkai.in has no mailbox yet (no MX records, 26 Oct 2026), so mail to
+  // support@linkai.in is lost: enquiries go to Dilli's Gmail until support@linkai.in is created, then remove this line.
+  enquiryEmail: "dillibabu.linkai@gmail.com",
   location: "A52, RPR Complex, 5th floor, 1st Main Rd, Kamadhenu Nagar, B Narayanapura, Mahadevapura, Bangalore 560016, Bengaluru, Karnataka 560016, India",
   location2: "WeWork, Salarpuria Symbiosis, Arekere Village, Bannerghatta Rd, Begur Hobli, Bengaluru, Karnataka 560076, India",
   mapCenter: [12.998056, 77.684862],
