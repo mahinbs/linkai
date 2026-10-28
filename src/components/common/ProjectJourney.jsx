@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
+import { HiOutlineBuildingOffice2, HiOutlineUserGroup, HiOutlineChartBar } from "react-icons/hi2";
 import { journey, audiences } from "../../content/realEstate";
+
+const audienceIcons = [HiOutlineBuildingOffice2, HiOutlineUserGroup, HiOutlineChartBar];
 
 /** The life of a project, with where technology helps at each step, and who we build for. */
 const ProjectJourney = () => {
@@ -22,7 +25,7 @@ const ProjectJourney = () => {
             <li
               key={step.id}
               data-aos="fade-up"
-              className="relative border border-black/15 rounded-2xl p-5 space-y-2 bg-[#f5f6f6]"
+              className="relative border border-black/15 rounded-2xl p-5 space-y-2 bg-mist"
             >
               <span className="absolute -top-4 left-5 w-8 h-8 rounded-full bg-primary text-black font-bold flex items-center justify-center">
                 {step.id}
@@ -32,29 +35,33 @@ const ProjectJourney = () => {
             </li>
           ))}
         </ol>
+        {/* One coherent row with an icon each, then the button centred below (Dilli, 28 Oct 2026 brief). */}
         <div className="grid md:grid-cols-3 gap-6 pt-4">
-          {audiences.map((a, i) => (
-            <div
-              key={a.title}
-              data-aos="fade-up"
-              className={`rounded-2xl p-6 space-y-2 border ${
-                // White, black, white: the middle card carries the dark tone (Dilli, 24 Oct 2026 review).
-                i % 2 === 1
-                  ? "bg-black text-white border-black"
-                  : "bg-[#f5f6f6] border-black/15"
-              }`}
-            >
-              <h3 className="text3">{a.title}</h3>
-              <p className="desc">{a.text}</p>
-            </div>
-          ))}
+          {audiences.map((a, i) => {
+            const Icon = audienceIcons[i % audienceIcons.length];
+            return (
+              <div
+                key={a.title}
+                data-aos="fade-up"
+                className="rounded-2xl p-6 bg-mist border border-black/10 flex gap-4 items-start transition-all duration-300 hover:border-primary hover:bg-primary/[0.06]"
+              >
+                <span className="shrink-0 w-12 h-12 rounded-xl bg-primary/15 text-primary flex items-center justify-center">
+                  <Icon size={24} />
+                </span>
+                <div className="space-y-1.5">
+                  <h3 className="text4">{a.title}</h3>
+                  <p className="desc text-black/75">{a.text}</p>
+                </div>
+              </div>
+            );
+          })}
         </div>
-        <div className="text-center">
+        <div className="text-center pt-2">
           <Link
             to="/contact-us"
-            className="btn inline-block bg-primary text-black uppercase min-w-[12rem] hover:shadow-large hover:shadow-primary/60"
+            className="btn inline-block bg-primary text-black font-semibold px-8 hover:shadow-large hover:shadow-primary/40"
           >
-            Talk to Our AI Solutions Team
+            Talk to Our Real Estate Solutions Team →
           </Link>
         </div>
       </div>

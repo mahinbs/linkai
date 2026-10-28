@@ -4,7 +4,21 @@ import DevelopmentProcess from "../../components/common/DevelopmentProcess";
 import OurExpertise from "./components/OurExpertise";
 import SolutionUseCases from "./components/SolutionUseCases";
 import { ourServices } from "../../content/ourServices";
+import { ctas } from "../../content/ctas";
+import Mockup from "../../components/mockups/Mockups";
+import towers from "../../assets/images/re/intro-towers.jpg";
 import { createUrlParam } from "../../utils/helper";
+
+/**
+ * On its own page each solution carries "Real Estate" in its heading (Dilli, 28 Oct 2026 brief); the services list and
+ * the page addresses keep the broad titles. The hero shows the solution's own screen beside the headline.
+ */
+const PAGE = {
+  "Project websites and virtual tours": { heading: "Real Estate Project Websites & Virtual Tours", screen: "Project Microsites" },
+  "Buyer and channel partner apps": { heading: "Real Estate Buyer & Channel Partner Apps", screen: "Buyer App" },
+  "AI for sales and operations": { heading: "AI for Real Estate Sales & Operations", screen: "Lead Scoring and Next Best Action", banner: towers },
+  "WhatsApp and voice sales assistants": { heading: "Real Estate WhatsApp & Voice AI Assistants", screen: "Enquiry Response on WhatsApp and Web" },
+};
 
 const ServiceDetails = () => {
   const { param } = useParams();
@@ -20,48 +34,43 @@ const ServiceDetails = () => {
     title,
   } = data;
 
+  const page = PAGE[title] || { heading: title };
+
   return (
     <>
-      <section className="relative w-full aspect-video min-h-[60vh] max-h-[80vh]">
-        <div className="absolute inset-0 h-full w-full bg-gradient-to-r from-black/80 via-black/55 to-black/20 z-[-1]"></div>
+      <section className="relative w-full min-h-[70vh] flex items-center overflow-hidden">
+        <div className="absolute inset-0 h-full w-full bg-gradient-to-r from-black via-black/85 to-black/40 z-[-1]"></div>
         <img
-          src={serviceDetails.banner}
+          src={page.banner || serviceDetails.banner}
           className="object-cover w-full h-full absolute inset-0 z-[-2]"
-          alt={title}
+          alt={page.heading}
         />
-        <div
-          data-aos="fade-right"
-          className="wrapper flex flex-col gap-3 h-full py-16 justify-center translate-y-[2rem]"
-        >
-          <div className="flex gap-4 items-center text4 !font-normal">
-            <Link to="/services">Services</Link> <span>|</span>
-            <p>{title}</p>
+        <div className="wrapper w-full grid lg:grid-cols-[1.15fr_0.85fr] gap-10 items-center pt-28 pb-16">
+          <div data-aos="fade-right" className="flex flex-col gap-4">
+            <div className="flex gap-3 items-center text-sm text-silver">
+              <Link to="/services" className="hover:text-primary">Services</Link> <span>/</span>
+              <p className="text-white">{page.heading}</p>
+            </div>
+            <h1 className="text_xl !text-[2.3rem] sm:!text-[3.4rem]">{page.heading}</h1>
+            {data.subHeading && <p className="text3 !font-medium max-w-2xl text-silver">{data.subHeading}</p>}
+            <div className="pt-2">
+              <a href="#contact" className="btn inline-block bg-primary text-black font-semibold px-7 hover:shadow-large hover:shadow-primary/40">
+                {(ctas[title] || ctas.home).button} →
+              </a>
+            </div>
           </div>
-          <h1 className="text_xl capitalize">{title}</h1>
-          {data.subHeading && <p className="desc max-w-2xl text-white/90">{data.subHeading}</p>}
+          {page.screen && (
+            <div data-aos="fade-left" className="hidden lg:block">
+              <Mockup title={page.screen} />
+            </div>
+          )}
         </div>
-        {/* <div className="wrapper flex justify-end -translate-y-1/2">
-          <img
-            data-aos="fade-up-right"
-            src={serviceDetails.img1}
-            className="hidden lg:block object-cover aspect-[3/4] h-fit overflow-hidden rounded-xl max-w-[17rem] -rotate-[4deg]"
-            alt=""
-          />
-        </div> */}
       </section>
 
-      <section className="relative overflow-hidden">
-        {/* <img
-          data-aos="fade-up"
-          src={circleImg}
-          width={150}
-          height={150}
-          className="object-contain absolute w-[17rem] h-[17rem] top-[-1rem] left-[-2rem] -z-[1]"
-          alt=""
-        /> */}
+      <section className="relative overflow-hidden bg-black">
         <div className="wrapper py-14">
           {/* Dilli, 24 Oct 2026 review: the problem and the benefit first, in short lines, then one clear next step. */}
-          <div className="rounded-2xl border border-white/15 bg-[#0d1117] p-7 md:p-10 max-w-5xl">
+          <div className="rounded-2xl border border-slate bg-panel p-7 md:p-10">
             <h2 data-aos="fade-up" className="text2 text-primary">
               {whyChooseContent.heading}
             </h2>
@@ -78,23 +87,14 @@ const ServiceDetails = () => {
                 </li>
               ))}
             </ul>
-            {data.cta && (
-              <div className="pt-8">
-                <Link
-                  to="/contact-us"
-                  className="btn inline-block bg-primary text-black uppercase hover:shadow-large hover:shadow-primary/50"
-                >
-                  {data.cta}
-                </Link>
-              </div>
-            )}
+
           </div>
         </div>
       </section>
       <OurExpertise content={serviceDetails.ourExpertiseContent || null} />
       <DevelopmentProcess content={serviceDetails.developmentProcess || null} />
       <SolutionUseCases content={serviceDetails.solutionUseCases || null} />
-      <ContactForm2 isDark={Boolean(!serviceDetails.solutionUseCases)} buttonLabel={data.cta || "Send Your Enquiry"} />
+      <ContactForm2 cta={ctas[title] || ctas.home} page={page.heading} />
     </>
   );
 };

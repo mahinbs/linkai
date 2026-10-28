@@ -85,7 +85,6 @@ const ServicesSection = () => {
         className="wrapper pt-20 grid md:grid-cols-[40%_1fr] gap-6"
       >
         <div className="relative space-y-4">
-          <div className="w-[8rem] h-[8rem] rounded-full bg-[radial-gradient(circle,_#FFFFFF,_#239FD2)] absolute bottom-[1rem] right-4 sm:right-[4rem] drop-shadow-2xl z-[1]"></div>
           <div
             data-aos="fade-right"
             className="flex items-center gap-4 z-[2] relative"
@@ -125,7 +124,7 @@ const ServicesSection = () => {
         >
           {ourServices.map((item) => (
             <div key={item.title} className="keen-slider__slide rounded-2xl">
-              <div className="bg-[#eeefef] h-full border border-white shadow-large p-7 rounded-xl space-y-3 hover:bg-primary transition-all duration-300 shadow-black/20">
+              <div className="bg-mist h-full border border-white shadow-large p-7 rounded-xl space-y-3 hover:bg-primary transition-all duration-300 shadow-black/20">
                 <img
                   src={item.image}
                   alt={item.title}

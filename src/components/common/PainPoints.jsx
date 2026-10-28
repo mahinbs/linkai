@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { circleImg, moonShapeImg } from "../../content/constant";
 import { painPoints } from "../../content/realEstate";
 import { createUrlParam } from "../../utils/helper";
 import useScrollTriggerAnimations from "../../hooks/useScrollTriggerAnimations";
@@ -14,34 +13,9 @@ const PainPoints = ({ id = "challenges" }) => {
     <section
       id={id}
       ref={scrollRef}
-      className="max-h-fit bg-[#242424] relative overflow-hidden"
+      className="max-h-fit bg-panel relative overflow-hidden"
     >
       <div className="pt-14 wrapper">
-        <img
-          loading="lazy"
-          src={moonShapeImg}
-          width={400}
-          height={400}
-          className="toTopLeft object-contain absolute w-[28rem] h-[20rem] top-[-7.5rem] left-[-10rem] -z-0"
-          alt=""
-        />
-        <img
-          loading="lazy"
-          src={moonShapeImg}
-          width={400}
-          height={400}
-          className="toBottomRight object-contain absolute w-[28rem] h-[20rem] bottom-[-7.5rem] right-[-9rem] scale-x-[-1] scale-y-[-1] -z-0"
-          alt=""
-        />
-        <img
-          data-aos="fade-down-right"
-          loading="lazy"
-          src={circleImg}
-          width={150}
-          height={150}
-          className="fromLeftToTopRight object-contain absolute w-[10rem] h-[10rem] top-[2rem] right-[-2rem] -z-0"
-          alt=""
-        />
         <h2 data-aos="fade-up" className="text1 text-center relative z-10">
           The Problems Real Estate Teams{" "}
           <span className="text-primary">Live With Every Day</span>
@@ -65,7 +39,7 @@ const PainPoints = ({ id = "challenges" }) => {
               to={`/services/${createUrlParam(item.fix)}`}
               className="group block h-full"
             >
-              <div className="relative backdrop-blur-lg border border-white/20 rounded-[1rem] overflow-hidden shadow-large shadow-black/20 bg-[#1a1a1a] group-hover:border-primary transition-all duration-500 h-full flex flex-col">
+              <div className="relative backdrop-blur-lg border border-white/20 rounded-[1rem] overflow-hidden shadow-large shadow-black/20 bg-panel group-hover:border-primary transition-all duration-500 h-full flex flex-col">
                 <div className="overflow-hidden aspect-[16/9]">
                   <img
                     loading="lazy"

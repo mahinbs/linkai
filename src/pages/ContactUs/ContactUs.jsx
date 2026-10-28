@@ -43,7 +43,7 @@ const ContactUs = () => {
                 can help and recommend a practical next step.
               </p>
             </div>
-            <div className="rounded-[1.5rem] border border-primary/30 bg-[#0d1a22] p-6 md:p-8">
+            <div className="rounded-[1.5rem] border border-primary/30 bg-black p-6 md:p-8">
               <EnquiryForm dark buttonLabel="Discuss Your Project" />
             </div>
           </div>

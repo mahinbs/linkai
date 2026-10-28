@@ -1,5 +1,4 @@
 import React from "react";
-import { circleImg } from "../../content/constant";
 
 const workProcess = [
   {
@@ -32,20 +31,6 @@ const workProcess = [
 const WorkProcess = () => {
   return (
     <div className="py-14 relative">
-      <img
-        data-aos="fade-down-right"
-        src={circleImg}
-        className="z-[-1] absolute top-[2rem] left-[-2rem] w-[18rem] h-[18rem] object-contain aspect-square"
-        alt=""
-        loading="lazy"
-      />
-      <img
-        data-aos="fade-up-right"
-        src={circleImg}
-        className="absolute bottom-0 right-[2rem] w-[11rem] h-[11rem] object-contain aspect-square z-[-1]"
-        alt=""
-        loading="lazy"
-      />
       <div className="wrapper space-y-3">
         <h3 className="text1 text-center">
           How We Work With

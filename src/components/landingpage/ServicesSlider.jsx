@@ -1,6 +1,5 @@
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 import { useKeenSlider } from "keen-slider/react";
-import { circleImg } from "../../content/constant";
 
 const animation = { duration: 40000, easing: (t) => t };
 
@@ -58,13 +57,6 @@ const ServicesSlider = ({ service, data }) => {
   };
   return (
     <div id='services' className="py-14 relative">
-      <img
-        data-aos="fade-down-right"
-        src={circleImg}
-        className="absolute top-0 left-[2rem] w-[13rem] h-[13rem] object-contain aspect-square z-[-1]"
-        alt=""
-        loading="lazy"
-      />
       <div className="wrapper pt-20 grid md:grid-cols-[40%_1fr] gap-6">
         <div className="space-y-4">
           <div
@@ -101,7 +93,7 @@ const ServicesSlider = ({ service, data }) => {
         >
           {data.map((item) => (
             <div key={item.title} className="keen-slider__slide rounded-2xl">
-              <div className="bg-[#1a1a1a] h-full shadow-large p-7 rounded-xl space-y-3">
+              <div className="bg-panel h-full shadow-large p-7 rounded-xl space-y-3">
                 <img
                   src={item.img}
                   alt={item.title}

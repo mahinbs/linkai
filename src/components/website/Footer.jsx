@@ -4,6 +4,7 @@ import { websiteLinks } from "./Header";
 import { Link } from "react-router-dom";
 import { IoLocation, IoMail } from "react-icons/io5";
 import { ImPhone } from "react-icons/im";
+import { BsWhatsapp } from "react-icons/bs";
 import {
   SlSocialFacebook,
   SlSocialInstagram,
@@ -12,9 +13,12 @@ import {
 
 const Footer = () => {
   return (
-    <div className="bg-white/10 py-12">
+    // Navy-teal like the rest of the dark sections; on phones extra room at the bottom so the floating WhatsApp button
+    // never covers the address (Dilli, 28 Oct 2026 brief).
+    <div className="bg-black border-t border-slate pt-12 pb-28 md:pb-12">
       <div className="wrapper flex md:flex-row flex-col flex-wrap justify-between gap-10 md:gap-7">
-        <div className="flex flex-col items-center gap-3 w-full md:w-auto">
+        {/* Logo and social icons are one block: on the left, with the icons centred under the logo. */}
+        <div className="flex flex-col items-center gap-3 self-start">
           <img src={logo} alt="Logo" className="w-[12rem] object-contain" />
           <div className="flex gap-3 justify-center">
             <Link
@@ -65,8 +69,17 @@ const Footer = () => {
               className="flex items-center gap-2 hover:text-primary"
             >
               <ImPhone size={20} className="text-primary" />
-              <p className="desc">{companyDetails.phone}</p>
+              <p className="desc">{companyDetails.phone.replace(/^\+91(\d{5})(\d{5})$/, "+91 $1 $2")}</p>
             </Link>
+            <a
+              href={companyDetails.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 hover:text-primary"
+            >
+              <BsWhatsapp size={19} className="text-primary" />
+              <p className="desc">Chat on WhatsApp</p>
+            </a>
             <div className="flex gap-2">
               <IoLocation size={23} className="text-primary" />
               <div className="space-y-1 flex flex-col gap-1">

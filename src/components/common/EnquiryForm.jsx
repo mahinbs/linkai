@@ -6,21 +6,22 @@ import toast from "react-hot-toast";
 import { SpinnerContext } from "./SpinnerContext";
 import { companyDetails } from "../../content/constant";
 
-/** What a visitor can pick under "How can we help?" (Dilli, 24 Oct 2026 review). */
+/** What a visitor can pick under "How can we help?" where the page has no list of its own (the four solutions). */
 export const helpOptions = [
-  "Website Development",
-  "AI & Automation",
-  "Business Applications",
-  "System Integration",
-  "Other",
+  "Project website or virtual tour",
+  "Buyer or channel partner app",
+  "AI for sales and operations",
+  "WhatsApp or voice AI assistant",
+  "Other / Not sure yet",
 ];
 
 /**
  * The one enquiry form, on the contact page and at the foot of other pages (Dilli, 24 Oct 2026: qualify the visitor
- * without making it a long questionnaire). Only name, email, what they need and the message are required; the phone is
- * optional and any email address is accepted, not only a work one.
+ * without making it a long questionnaire). Name, email, phone or WhatsApp number (required since his 28 Oct brief), what
+ * they need and the message are required; any email address is accepted, not only a work one. Each page passes its own
+ * dropdown options and button label.
  */
-const EnquiryForm = ({ dark = true, buttonLabel = "Send Your Enquiry" }) => {
+const EnquiryForm = ({ dark = true, buttonLabel = "Send Your Enquiry", options = helpOptions, page = "" }) => {
   const { setLoading } = useContext(SpinnerContext);
   const navigate = useNavigate();
   const {
@@ -42,11 +43,12 @@ const EnquiryForm = ({ dark = true, buttonLabel = "Send Your Enquiry" }) => {
         `Email : ${values.email}\n\n` +
         `Phone / WhatsApp : ${values.phone || "-"}\n\n` +
         `How can we help : ${values.help}\n\n` +
+        (page ? `Page : ${page}\n\n` : "") +
         `Message : ${values.message}\n\n`;
       const res = await axios.post("https://send-mail-redirect-boostmysites.vercel.app/send-email", {
         body,
         name: "LinkAI",
-        subject: `Website enquiry: ${values.help}`,
+        subject: `Website enquiry${page ? ` (${page})` : ""}: ${values.help}`,
         to: companyDetails.enquiryEmail || companyDetails.email,
       });
       if (res.data.success) {
@@ -102,13 +104,16 @@ const EnquiryForm = ({ dark = true, buttonLabel = "Send Your Enquiry" }) => {
           {err(errors.email)}
         </label>
         <label className="block space-y-1">
-          <span className={label}>Phone / WhatsApp (optional)</span>
+          <span className={label}>Phone / WhatsApp Number *</span>
           <input
             type="tel"
             className={field}
-            placeholder="+91"
+            placeholder="+91 98765 43210"
             {...register("phone", {
-              validate: (v) => v.trim() === "" || /^\+?[\d\s\-()]{6,14}\d$/.test(v.trim()) || "Please check the number",
+              validate: (v) => {
+                if (v.trim() === "") return "Please add a number we can call or WhatsApp";
+                return /^\+?[\d\s\-()]{6,14}\d$/.test(v.trim()) || "Please check the number";
+              },
             })}
           />
           {err(errors.phone)}
@@ -121,7 +126,7 @@ const EnquiryForm = ({ dark = true, buttonLabel = "Send Your Enquiry" }) => {
           {...register("help", { required: "Please choose one" })}
         >
           <option value="">Choose one</option>
-          {helpOptions.map((o) => (
+          {options.map((o) => (
             <option key={o} value={o}>
               {o}
             </option>
@@ -141,7 +146,7 @@ const EnquiryForm = ({ dark = true, buttonLabel = "Send Your Enquiry" }) => {
       </label>
       <button
         type="submit"
-        className="btn bg-primary text-black uppercase tracking-wider hover:shadow-large hover:shadow-primary/50 w-full sm:w-auto px-8"
+        className="btn bg-primary text-black font-semibold hover:shadow-large hover:shadow-primary/40 w-full sm:w-auto px-8"
       >
         {buttonLabel} →
       </button>

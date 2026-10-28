@@ -8,6 +8,7 @@ import WorkProcess from "../../components/common/WorkProcess";
 import { useEffect } from "react";
 import gsap from "gsap";
 import ContactForm2 from "../../components/common/ContactForm2";
+import { ctas } from "../../content/ctas";
 import HeroBannerVideo from "../../components/common/HeroBannerVideo";
 
 export default function Home() {
@@ -159,7 +160,7 @@ export default function Home() {
       <ProjectJourney />
       <ServicesSection />
       <WorkProcess />
-      <ContactForm2 />
+      <ContactForm2 cta={ctas.home} page="Home" />
     </>
   );
 }

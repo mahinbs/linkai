@@ -35,7 +35,7 @@ const Blogs = () => {
               <Link
                 key={blog.id}
                 to={`/blogs/${blog.slug}`}
-                className="group p-3 border border-primary2/60 rounded-xl flex flex-col gap-4 hover:border-primary transition-all duration-300"
+                className="group p-3 border border-slate bg-panel rounded-2xl flex flex-col gap-4 hover:border-primary transition-all duration-300"
               >
                 <div className="overflow-hidden aspect-video rounded-lg">
                   <img
@@ -50,58 +50,13 @@ const Blogs = () => {
                     {blog.category} · {new Date(blog.date).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" })}
                   </p>
                   <h3 className="text3 !leading-snug">{blog.title}</h3>
-                  <p className="desc text-white/75">{blog.excerpt}</p>
+                  <p className="desc text-silver">{blog.excerpt}</p>
                   <p className="mt-auto pt-2 font-semibold text-primary group-hover:underline underline-offset-4">
                     Read More →
                   </p>
                 </div>
               </Link>
             ))}
-          </div>
-        </div>
-      </section>
-      <section className="py-14">
-        <div className="wrapper space-y-[3rem]">
-          <div className="space-y-4 max-w-3xl">
-            <h2 className="text2">Insights & Updates</h2>
-            <p className="desc">
-              Practical ideas for real estate developers and builders: how to
-              answer every enquiry, book more site visits and keep buyers
-              informed, from the LinkAI team.
-            </p>
-          </div>
-          <div className="space-y-2">
-            <div className="grid grid-cols-3 gap-7">
-              {blogs.map((blog) => (
-                <div className="p-3 border border-primary2 rounded-xl flex justify-between flex-col gap-6">
-                  <div className="space-y-3">
-                    <Link
-                      to={blog.link}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="group"
-                    >
-                      <div className="overflow-hidden aspect-square rounded-xl">
-                        <img
-                          src={blog.image}
-                          alt="Blog"
-                          className="object-cover w-full aspect-square group-hover:brightness-90 group-hover:scale-105 transition-all duration-300"
-                        />
-                      </div>
-                    </Link>
-                    <h3 className="text3 mt-2">{blog.title}</h3>
-                  </div>
-                  <Link
-                    to={blog.link}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="btn bg-primary text-black hover:bg-black hover:text-white border border-primary h-fit"
-                  >
-                    Read More
-                  </Link>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </section>

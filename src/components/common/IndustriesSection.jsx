@@ -1,4 +1,4 @@
-import { circleImg, industries, moonShapeImg } from "../../content/constant";
+import { industries } from "../../content/constant";
 import useScrollTriggerAnimations from "../../hooks/useScrollTriggerAnimations";
 
 const IndustriesSection = () => {
@@ -6,34 +6,9 @@ const IndustriesSection = () => {
   return (
     <section
       ref={scrollRef}
-      className="max-h-fit bg-[#242424] relative overflow-hidden"
+      className="max-h-fit bg-panel relative overflow-hidden"
     >
       <div className="pt-14 wrapper">
-        <img
-          loading="lazy"
-          src={moonShapeImg}
-          width={400}
-          height={400}
-          className="toTopLeft object-contain absolute w-[28rem] h-[20rem] top-[-7.5rem] left-[-10rem] -z-0"
-          alt=""
-        />
-        <img
-          loading="lazy"
-          src={moonShapeImg}
-          width={400}
-          height={400}
-          className="toBottomRight object-contain absolute w-[28rem] h-[20rem] bottom-[-7.5rem] right-[-9rem] scale-x-[-1] scale-y-[-1] -z-0"
-          alt=""
-        />
-        <img
-          data-aos="fade-down-right"
-          loading="lazy"
-          src={circleImg}
-          width={150}
-          height={150}
-          className="fromLeftToTopRight object-contain absolute w-[10rem] h-[10rem] top-[2rem] right-[-2rem] -z-0"
-          alt=""
-        />
         <h2 data-aos="fade-up" className="text1 text-center">
           Industries <span className="text-primary">We Serve</span>
         </h2>
@@ -73,7 +48,7 @@ const IndustriesSection = () => {
       </div>
       {/* <div className="bg-black lg:h-[30rem] pb-14 lg:pb-0">
         <div className="relative h-full">
-          <div className="z-0 absolute top-0 h-1/3 w-full bg-[#242424]"></div>
+          <div className="z-0 absolute top-0 h-1/3 w-full bg-panel"></div>
           <div className="z-[-1] absolute top-1/2 h-2/3 w-full bg-black"></div>
           <div className="wrapper grid sm:grid-cols-2 xl:grid-cols-3 xl:max-w-5xl gap-7 xl:pt-4">
             {industries.slice(4, 7).map((item) => (

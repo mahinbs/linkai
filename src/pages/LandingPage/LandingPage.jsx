@@ -4,6 +4,7 @@ import appAboutImg from "../../assets/images/landing page/app-about.png";
 import PainPoints from "../../components/common/PainPoints";
 import { Link } from "react-scroll";
 import ContactForm2 from "../../components/common/ContactForm2";
+import { ctas } from "../../content/ctas";
 import DevelopmentProcess from "../../components/common/DevelopmentProcess";
 import { ourServices } from "../../content/ourServices";
 import {
@@ -190,7 +191,7 @@ export default function LandingPage({ page }) {
         </div>
       </section>
       <ClientLogos />
-      <ContactForm2 />
+      <ContactForm2 cta={page === "app" ? ctas.landingApp : ctas.landingWeb} page={page === "app" ? "App development landing page" : "Web development landing page"} />
     </>
   );
 }

@@ -29,7 +29,7 @@ const Services = () => {
           </p>
         </div>
       </section>
-      <section className="py-14 bg-[#111111]">
+      <section className="py-14 bg-panel">
         <div className="wrapper grid lg:grid-cols-2 gap-10">
           {ourServices.map((item) => (
             <div data-aos="fade-up" key={item.id} className="mx-auto">

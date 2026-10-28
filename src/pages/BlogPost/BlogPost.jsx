@@ -1,6 +1,7 @@
 import { Link, Navigate, useParams } from "react-router-dom";
 import { blogs } from "../../content/blogs";
 import ContactForm2 from "../../components/common/ContactForm2";
+import { ctas } from "../../content/ctas";
 
 /** One blog post at /blogs/<slug>, written in src/content/blogs.js. */
 const BlogPost = () => {
@@ -41,7 +42,7 @@ const BlogPost = () => {
           )}
         </div>
       </article>
-      <ContactForm2 isDark />
+      <ContactForm2 cta={ctas.blog} page="Blog" />
     </>
   );
 };

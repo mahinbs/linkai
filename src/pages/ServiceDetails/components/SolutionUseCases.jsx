@@ -1,50 +1,61 @@
-import React from "react";
-import { circleImg } from "../../../content/constant";
+/**
+ * "Proof and reassurance" (Dilli, 28 Oct 2026 brief, step 05 of the page flow): how developers use the solution, then
+ * how an engagement runs. No invented client names or results; the use cases are examples and say so.
+ */
+const promises = [
+  ["Your project first", "We start from how your sales and site teams work today."],
+  ["Screens before code", "You see and approve the design before development starts."],
+  ["Launch in stages", "Live in agreed steps, so your team adopts it without disruption."],
+  ["Support after launch", "Changes and help as your project moves from launch to handover."],
+];
 
 const SolutionUseCases = ({ content }) => {
-  if (!content) return null;
   return (
-    <div className="py-14 relative overflow-hidden">
-      <img
-        data-aos="fade-up-right"
-        loading="lazy"
-        src={circleImg}
-        width={150}
-        height={150}
-        className="object-contain absolute w-[14rem] h-[14rem] bottom-[-2rem] left-[-2rem] -z-[1]"
-        alt=""
-      />
-      <div className="wrapper">
-        <h2 data-aos="fade-up" className="text2 text-primary">
-          {content.heading}
-        </h2>
-        <div className="grid md:grid-cols-2 gap-7 pt-8">
-          {content.contentArr.map((item, index, arr) => {
-            const isLastItemOdd =
-              arr.length % 2 !== 0 && index === arr.length - 1;
-            return (
-              <div
-                key={item.title}
-                data-aos="fade-up"
-                className={`${
-                  isLastItemOdd && "md:col-span-2 md:w-1/2 mx-auto"
-                } w-full rounded-3xl text-center border border-white/50 p-5 space-y-4 bg-[#1d1d1d]`}
-              >
-                <h5 className="text4">{item.title}</h5>
-                <div className="space-y-2 flex flex-col items-start max-w-lg mx-auto">
-                  {item.list.map((text) => (
-                    <div key={text} className="flex gap-2 text-start">
-                      <div className="w-2 h-2 min-w-2 rounded-full bg-white mt-2" />{" "}
-                      {text}
-                    </div>
-                  ))}
+    <section className="py-16 bg-black">
+      <div className="wrapper space-y-12">
+        {content && (
+          <div className="space-y-8">
+            <div className="space-y-3 max-w-3xl">
+              <p data-aos="fade-up" className="text-xs uppercase tracking-[0.25em] text-primary font-semibold">Examples</p>
+              <h2 data-aos="fade-up" className="text1">{content.heading}</h2>
+            </div>
+            <div className="grid md:grid-cols-2 gap-6">
+              {content.contentArr.map((item, i, arr) => (
+                <div
+                  key={item.title}
+                  data-aos="fade-up"
+                  className={`rounded-2xl border border-slate bg-panel p-6 space-y-3 ${arr.length % 2 && i === arr.length - 1 ? "md:col-span-2 md:w-1/2 md:mx-auto" : ""}`}
+                >
+                  <h3 className="text4 text-primary">{item.title.replace(/^Use Case \d+:\s*/, "")}</h3>
+                  <ul className="space-y-2">
+                    {item.list.map((text) => {
+                      const [k, ...rest] = text.split(":");
+                      return (
+                        <li key={text} className="desc text-silver">
+                          {rest.length ? (<><span className="text-white font-semibold">{k}:</span>{rest.join(":")}</>) : text}
+                        </li>
+                      );
+                    })}
+                  </ul>
                 </div>
+              ))}
+            </div>
+          </div>
+        )}
+        <div className="space-y-6">
+          <h2 data-aos="fade-up" className="text2">What You Can Expect</h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {promises.map(([t, d], i) => (
+              <div key={t} data-aos="fade-up" className="rounded-2xl border border-slate p-5 space-y-2">
+                <span className="text-primary font-bold text-sm">{String(i + 1).padStart(2, "0")}</span>
+                <h3 className="text4">{t}</h3>
+                <p className="desc text-silver text-[15px]">{d}</p>
               </div>
-            );
-          })}
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
